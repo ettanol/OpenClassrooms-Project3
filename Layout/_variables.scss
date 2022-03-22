@@ -1,0 +1,95 @@
+@import './functions';
+
+$bg-dark : #111;
+$bg-color: #F4F4F4;
+
+$color-primary : #9356DC;
+$color-secondary : #FF79DA;
+$color-tertiary : #99E2D0;
+$text-color: textColor($color-primary);
+
+.flex-container {
+    display: flex;
+}
+
+.main-axis-center {
+    justify-content: center;
+}
+
+.cross-axis-center {
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.card {
+    box-shadow: 20px 20px 20px #999;
+    padding: 20px;
+}
+
+.rounded {
+    border-radius: 2rem;
+}
+
+a {
+    text-decoration: none;
+    transform: scale(1);
+    
+    &:hover {
+        transform: scale(1.15);
+        transition: transform 200ms ease-out;
+    }
+}
+
+img {
+    width: 100%;
+}
+  
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.highlighted {
+    color: $color-primary;
+}
+  
+.discreet {
+    color: #F4F4F4;
+}
+  
+.uppercase {
+    text-transform: uppercase;
+}
+
+h2 {
+    line-height: 2.2rem;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  h3 {
+    font-weight: 550;
+    font-size: 1.7rem;
+    margin-top: 1.7rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  h4 {
+    font-weight: 550;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  
+.banner {
+    margin-top: 75px;
+  }
+  
