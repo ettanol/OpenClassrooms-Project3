@@ -1,19 +1,36 @@
-@import './functions';
-
 $bg-dark : #111;
 $bg-color: #F4F4F4;
 
 $color-primary : #9356DC;
 $color-secondary : #FF79DA;
 $color-tertiary : #99E2D0;
-$text-color: textColor($color-primary);
+$text-color: #111;
+$color-white: #fff;
+$color-discreet: rgba(200, 200, 200, .5);
+$color-lightgray: rgba(218, 218, 218, 0.3);
 
-.flex-container {
+/* display */ 
+
+.d-flex {
     display: flex;
 }
 
+.d-grid {
+    display: grid;
+}
+
+/* to organise flexboxes and grids */
+
 .main-axis-center {
     justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
 }
 
 .cross-axis-center {
@@ -24,14 +41,22 @@ $text-color: textColor($color-primary);
     flex-direction: column;
 }
 
+/*cards */
+
 .card {
-    box-shadow: 20px 20px 20px #999;
-    padding: 20px;
+    height: fit-content;
+    background-color: $color-white;
+}
+
+.shadow {
+box-shadow: 5px 5px 10px #AAA;
 }
 
 .rounded {
-    border-radius: 2rem;
+    border-radius: 20px;
 }
+
+/* objects */
 
 a {
     text-decoration: none;
@@ -55,41 +80,88 @@ img {
     display: inline-block;
 }
 
-.highlighted {
-    color: $color-primary;
-}
-  
-.discreet {
-    color: #F4F4F4;
-}
-  
+/* text */
+
 .uppercase {
     text-transform: uppercase;
 }
 
+h1{
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
 h2 {
     line-height: 2.2rem;
-    font-weight: 500;
-    font-size: 2.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-weight: 600;
+    font-size: 1.3rem;
   }
   
   h3 {
     font-weight: 550;
-    font-size: 1.7rem;
-    margin-top: 1.7rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
   }
   
   h4 {
     font-weight: 550;
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    font-size: 1rem;
   }
 
   
 .banner {
     margin-top: 75px;
   }
-  
+
+/* colors */
+
+.bg-primary {
+    background-color: $color-primary;
+}
+
+.bg-secondary {
+    background-color: $color-secondary;
+}
+
+.bg-tertiary {
+    background-color: $color-tertiary;
+}
+
+.bg-color {
+    background-color: $bg-color;
+}
+
+.bg-discreet {
+    background-color: $color-discreet;
+}
+
+.bg-lightgray {
+    background-color: $color-lightgray;
+}
+
+.bg-dark {
+    background-color: $bg-dark;
+}
+
+.discreet {
+    color: $color-discreet;
+}
+
+.f-white {
+    color: $color-white;
+}
+
+.f-lightgray {
+    color: $color-lightgray;
+}
+.highlighted {
+    color: $color-primary;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+.color-tertiary {
+    color: $color-tertiary;
+}

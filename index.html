@@ -11,111 +11,130 @@
         <link rel="shortcut icon" type="image/png" href="./images/logo/favicon.png">
         <meta name="theme-color" content="#9356DC"> <!-- safari tab-color : mauve -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="./style/Base/style.css" rel="stylesheet">
         <title>Ohmyfood!</title>
     </head>
-        <body class="d-flex column cross-axis-center">
-        <div class="container">
+
+    <body class="d-flex column cross-axis-center">
+    <div class="container">
+        <!-- page 1 -->
+        <div class="page">
             <header>
-                <div id="logo">
-                    <img href="./images/logo/ohmyfood@2x.svg">
+                <img href="./images/logo/ohmyfood@2x.svg" class="logo" alt="logo">
+                <div id="location" class="bg-discreet">
+                    <span class="material-icons">
+                        room
+                    </span>
+                    <span class="location">Paris, Belleville</span>
                 </div>
             </header>
-            <section id="location">
-                <span class="material-icons">
-                    room
-                </span>
-                <span class="location">Paris, Belleville</span>
-            </section>
-                <section class="CTA">
-                    <h1 class="CTA-catchphrase">Réservez le menu qui vous convient</h1>
-                    <p>Découvre des restaurants d'eception, sélectionnés par nos soins.</p>
-                    <button class="cta-btn bg-primary f-white">Explorez nos restaurants</button>
-                </section>
-                <section id="explanations">
-                    <h2 class="title">Fonctionnement</h2>
-                    <div class="card shadow d-flex">
-                        <span class="material-icons">
 
+            <aside id="CTA" class="bg-lightgray d-flex column">
+                <h1 class="CTA-catchphrase">Réservez le menu qui vous convient</h1>
+                <p class="f-discreet">Découvre des restaurants d'exception, sélectionnés par nos soins.</p>
+                <a href="#restaurants" class="cta-btn f-white">Explorez nos restaurants</a>
+            </aside>
+
+            <section id="explanations">
+                <div class="explanation--content d-flex column cross-axis-center">
+                    <h2 class="title">Fonctionnement</h2>
+                    <div class="card rounded shadow d-flex">
+                        <button class="steps">1</button>
+                        <span class="material-icons">
+                            phone_iphone
                         </span>
                         <p>Choisissez un restaurant</p>
                     </div>
-                    <div class="card shadow d-flex">
+                    <div class="card rounded shadow d-flex">
+                        <button class="steps">2</button>
                         <span class="material-icons">
-
+                            list
                         </span>
                         <p>Composez votre menu</p>
                     </div>
-                    <div class="card shadow d-flex">
+                    <div class="card rounded shadow d-flex">
+                        <button class="steps">3</button>
                         <span class="material-icons">
-
+                            storefront
                         </span>
                         <p>Dégustez au restaurant</p>
                     </div>
-                </section>
-                <section id="restaurants">
-                    <h2 class="title">restaurants</h2>
-                    <div class="card d-flex column">
-                        <img src="" alt="" class="restaurant-promotion">
-                        <div class="d-flex">
-                            <div class="restaurant-details">
-                                <h3 class="restaurant-name"></h3>
-                                <p class="restaurant-location"></p>
-                            </div>
-                            <span>
-                                
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card d-flex column">
-                        <img src="" alt="" class="restaurant-promotion">
-                        <div class="d-flex">
-                            <div class="restaurant-details">
-                                <h3 class="restaurant-name"></h3>
-                                <p class="restaurant-location"></p>
-                            </div>
-                            <span>
-
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card d-flex column">
-                        <img src="" alt="" class="restaurant-promotion">
-                        <div class="d-flex">
-                            <div class="restaurant-details">
-                                <h3 class="restaurant-name"></h3>
-                                <p class="restaurant-location"></p>
-                            </div>
-                            <span>
-
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card d-flex column">
-                        <img src="" alt="" class="restaurant-promotion">
-                        <div class="d-flex">
-                            <div class="restaurant-details">
-                                <h3 class="restaurant-name"></h3>
-                                <p class="restaurant-location"></p>
-                            </div>
-                            <span>
-
-                            </span>
-                        </div>
-                    </div>
-                </section>
+                </div>
+            </section>
         </div>
-        <footer>
-            <div class="logo"></div>
-            <nav>
+
+        <!-- page 2 -->
+        <div class="page">
+            <section id="restaurants" class="bg-lightgray">
+                <h2 class="title main-axis-center">Restaurants</h2>
+                <div class="restaurants--cards d-flex column cross-axis-center">
+                    <div class="card rounded d-flex column">
+                        <img src="./images/restaurants/la_palette_du_gout.jpg" alt="restaurant la pallette du goût" class="restaurant-promotion">
+                        <button class="new">Nouveau</button>
+                        <div class="details d-flex space-between">
+                            <div class="restaurant-details">
+                                <h3 class="restaurant-name">La palette du goût</h3>
+                                <p class="restaurant-location">Ménilmontant</p>
+                            </div>
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card rounded d-flex column">
+                        <img src="./images/restaurants/la_note_enchantee.jpg" alt="restaurant la note enchantée" class="restaurant-promotion">
+                        <button class="new">Nouveau</button>
+                        <div class="details d-flex space-between">
+                            <div class="restaurant-details">
+                                <h3 class="restaurant-name">La note enchantée</h3>
+                                <p class="restaurant-location">Charonne</p>
+                            </div>
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card rounded d-flex column">
+                        <img src="./images/restaurants/a_la_francaise.jpg" alt="restaurant A la française" class="restaurant-promotion">
+                        <div class="details d-flex space-between">
+                            <div class="restaurant-details">
+                                <h3 class="restaurant-name">À la française</h3>
+                                <p class="restaurant-location">Cité rouge</p>
+                            </div>
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card rounded d-flex column">
+                        <img src="/images/restaurants/le_delice_des_sens.jpg" alt="restaurant Le délice des sens" class="restaurant-img">
+                        <div class="details d-flex space-between">
+                            <div class="restaurant-details">
+                                <h3 class="restaurant-name">Le délice des sens</h3>
+                                <p class="restaurant-location">Folie-Méricourt</p>
+                            </div>
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- page 3 -->
+        <footer class="page">
+            <img href="./images/logo/ohmyfood.png" class="logo">
+            <nav class="footer--navbar">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><span class="material-icons">restaurant</span><a href="#">Proposer un restaurant</a></li>
+                    <li><span class="material-icons">handshake</span><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </footer>
-        </body>
+    </div>
+    </body>
 </html>
