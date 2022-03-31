@@ -12,16 +12,22 @@
         <meta name="theme-color" content="#9356DC"> <!-- safari tab-color : mauve -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link href="./style/Base/style.css" rel="stylesheet">
         <title>Ohmyfood!</title>
     </head>
 
     <body class="d-flex column cross-axis-center">
     <div class="container">
-        <!-- page 1 -->
+        <div class="loading-page">
+            <div class="loading-spinner"></div>
+            <div class="loading-spinner"></div>
+            <div class="loading-spinner"></div>
+        </div>
+        <!-- desktop page 1 -->
         <div class="page">
-            <header>
-                <img href="./images/logo/ohmyfood@2x.svg" class="logo" alt="logo">
+            <header class="d-flex column cross-axis-center">
+                <img src="./images/ohmyfood.png" class="logo" alt="logo">
                 <div id="location" class="bg-discreet">
                     <span class="material-icons">
                         room
@@ -64,7 +70,7 @@
             </section>
         </div>
 
-        <!-- page 2 -->
+        <!-- desktop page 2 -->
         <div class="page">
             <section id="restaurants" class="bg-lightgray">
                 <h2 class="title main-axis-center">Restaurants</h2>
@@ -77,9 +83,10 @@
                                 <h3 class="restaurant-name">La palette du goût</h3>
                                 <p class="restaurant-location">Ménilmontant</p>
                             </div>
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
+                            <div class="heart-icon">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="card rounded d-flex column">
@@ -90,9 +97,10 @@
                                 <h3 class="restaurant-name">La note enchantée</h3>
                                 <p class="restaurant-location">Charonne</p>
                             </div>
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
+                            <div class="heart-icon">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="card rounded d-flex column">
@@ -102,9 +110,10 @@
                                 <h3 class="restaurant-name">À la française</h3>
                                 <p class="restaurant-location">Cité rouge</p>
                             </div>
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
+                            <div class="heart-icon">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="card rounded d-flex column">
@@ -114,18 +123,19 @@
                                 <h3 class="restaurant-name">Le délice des sens</h3>
                                 <p class="restaurant-location">Folie-Méricourt</p>
                             </div>
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
+                            <div class="heart-icon">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- page 3 -->
+        <!-- desktop page 3 -->
         <footer class="page">
-            <img href="./images/logo/ohmyfood.png" class="logo">
+            <img src="./images/logos/ohmyfood.png" class="logo" alt="logo">
             <nav class="footer--navbar">
                 <ul>
                     <li><span class="material-icons">restaurant</span><a href="#">Proposer un restaurant</a></li>

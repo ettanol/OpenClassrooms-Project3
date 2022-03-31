@@ -91,6 +91,9 @@ select {
 
 /* to organise flexboxes and grids */
 .main-axis-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -108,6 +111,9 @@ select {
 }
 
 .cross-axis-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -253,6 +259,7 @@ h4 {
   text-align: center;
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 a {
@@ -275,26 +282,66 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: 'Roboto', Arial, 'sans-serif';
   background-color: #F4F4F4;
   color: #111;
 }
 
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  margin-right: 10px;
+}
+
+.loading-spinner:nth-of-type(2) {
+  background-color: #FF79DA;
+}
+
 /* header */
-.header {
+header {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  background: #fff;
+  position: relative;
 }
 
 #location {
+  position: absolute;
+  width: 100%;
   padding: 10px;
+  bottom: 0;
 }
 
-#logo {
-  width: 150px;
-  height: auto;
-  margin: 10px;
+.logo {
+  max-width: 250px;
+  min-width: 150px;
+  height: 50px;
+  margin: 20px;
 }
 
 /* all sections */
@@ -365,6 +412,9 @@ aside .cta-btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #restaurants .card {
@@ -405,6 +455,29 @@ aside .cta-btn {
   border: none;
 }
 
+#restaurants .heart-icon {
+  position: relative;
+  margin-right: 20px;
+  height: 30px;
+  width: 30px;
+}
+
+#restaurants .heart-icon .fa-solid, #restaurants .heart-icon .fa-regular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+
+#restaurants .heart-icon .fa-solid {
+  opacity: 0;
+  color: #9356DC;
+}
+
+#restaurants .heart-icon .fa-regular {
+  opacity: 1;
+}
+
 /* footer */
 footer {
   margin: 0;
@@ -435,17 +508,135 @@ footer li a {
 }
 
 /* animations */
-/* once the page is loaded */
-#explanations .card {
-  opacity: 0;
-  left: -100%;
+/* loading page */
+@-webkit-keyframes loadingScreen {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes loadingScreen {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes loadingDots {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+}
+
+@keyframes loadingDots {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+}
+
+.loading-page {
+  -webkit-animation: loadingScreen 2000ms 0s 1 forwards;
+          animation: loadingScreen 2000ms 0s 1 forwards;
+}
+
+.loading-spinner {
+  -webkit-animation: loadingDots 1000ms 0s 2 ease-out;
+          animation: loadingDots 1000ms 0s 2 ease-out;
+}
+
+.loading-spinner:nth-of-type(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+.loading-spinner:nth-of-type(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+/* card appearance effect once the page is loaded */
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes transitionDelay {
+  /* to keep the card opacity to 0 before the animation */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes transitionDelay {
+  /* to keep the card opacity to 0 before the animation */
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #explanations .card {
-  opacity: 1;
-  left: 0;
-  -webkit-transition-delay: 1000ms;
-          transition-delay: 1000ms;
+  -webkit-animation: 2200ms transitionDelay, 1s ease-out 2200ms 1 slideInLeft forwards;
+          animation: 2200ms transitionDelay, 1s ease-out 2200ms 1 slideInLeft forwards;
+}
+
+#explanations .card:nth-of-type(2) {
+  -webkit-animation: 2400ms transitionDelay, 1s ease-out 2400ms 1 slideInLeft forwards;
+          animation: 2400ms transitionDelay, 1s ease-out 2400ms 1 slideInLeft forwards;
+}
+
+#explanations .card:nth-of-type(3) {
+  -webkit-animation: 2600ms transitionDelay, 1s ease-out 2600ms 1 slideInLeft forwards;
+          animation: 2600ms transitionDelay, 1s ease-out 2600ms 1 slideInLeft forwards;
 }
 
 #explanations .card:hover {
@@ -453,6 +644,61 @@ footer li a {
   color: #fff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+
+/* buttons */
+.btn, .cta-btn {
+  opacity: 1;
+}
+
+.btn:hover, .cta-btn:hover {
+  opacity: .8;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.heart-icon .fa-regular:hover {
+  -webkit-animation: disappear 200ms 0s 1 forwards ease-in;
+          animation: disappear 200ms 0s 1 forwards ease-in;
+}
+
+.heart-icon .fa-solid:hover {
+  -webkit-animation: appear 200ms 0s 1 forwards ease-in;
+          animation: appear 200ms 0s 1 forwards ease-in;
 }
 
 /* media queries tablet and desktop */
@@ -514,13 +760,16 @@ footer li a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     background: #111;
   }
   #explanations .explanation--content {
-    margin: 0 auto;
+    margin-top: 130px;
     width: 60%;
   }
   #explanations .explanation--content .title {

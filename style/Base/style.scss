@@ -6,6 +6,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    z-index: 1;
 }
 
 a {
@@ -21,25 +22,57 @@ a:hover {
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family : 'Roboto', Arial, 'sans-serif';
     background-color: $bg-color;
     color: $text-color;
 }
 
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    margin-right: 10px;
+
+    &:nth-of-type(2) {
+        background-color: $color-secondary;
+    }
+}
+
 /* header */
 
-.header {
+header {
     height: fit-content;
+    background: #fff;
+    position: relative;
 }
 
 #location {
+    position: absolute;
+    width: 100%;
     padding: 10px;
+    bottom: 0;
 }
 
-#logo {
-    width: 150px;
-    height: auto;
-    margin: 10px;
+.logo {
+    max-width: 250px;
+    min-width: 150px;
+    height: 50px;
+    margin: 20px;
 }
 
 /* all sections */
@@ -106,6 +139,7 @@ aside {
 #restaurants {
     display: flex;
     flex-direction: column;
+    height: fit-content;
 
     .card {
         height: 400px;
@@ -141,6 +175,28 @@ aside {
         border: none;
     }
 
+    .heart-icon {
+        position: relative;
+        margin-right: 20px;
+        height: 30px;
+        width: 30px;
+
+        .fa-solid, .fa-regular {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 30px;
+        }
+
+        .fa-solid {
+            opacity: 0;
+            color: $color-primary;
+        }
+
+        .fa-regular {
+            opacity: 1;
+        }
+    }
 }
 
 /* footer */
@@ -175,16 +231,60 @@ footer {
 
 /* animations */
 
-/* once the page is loaded */
+/* loading page */
+$loading-time: 2000ms;
+
+@keyframes loadingScreen {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes loadingDots {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+.loading-page {
+    animation: loadingScreen $loading-time 0s 1 forwards;
+}
+
+.loading-spinner {
+    animation: loadingDots $loading-time/2 0s 2 ease-out;
+
+    &:nth-of-type(2){
+        animation-delay: 200ms;
+    }
+    
+    &:nth-of-type(3){
+        animation-delay: 400ms;
+    }
+}
+
+
+
+/* card appearance effect once the page is loaded */
+$delay-time : 200ms;
+$loading-time-first : $loading-time +$delay-time;
+$loading-time-second: $loading-time +$delay-time*2;
+$loading-time-third: $loading-time +$delay-time*3;
 
 @keyframes slideInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
-    }
-    50% {
-        opacity: .5;
-        transform: translateX(-25%);
+        transform: translateX(-50%);
     }
     100%{
         opacity: 1;
@@ -192,15 +292,73 @@ footer {
     }
 }
 
-#explanations .card {
-   animation:  1s ease-out 0s 1 slideInLeft;
+@keyframes transitionDelay { /* to keep the card opacity to 0 before the animation */
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
 }
+
+#explanations .card {
+    animation:  $loading-time-first transitionDelay,
+                1s ease-out $loading-time-first 1 slideInLeft forwards;
+    
+    &:nth-of-type(2){
+        animation:  $loading-time-second transitionDelay, 
+                    1s ease-out $loading-time-second 1 slideInLeft forwards;
+    }
+    
+    &:nth-of-type(3){
+        animation:  $loading-time-third transitionDelay, 
+                    1s ease-out $loading-time-third 1 slideInLeft forwards;
+    }
+}
+
 
 #explanations .card:hover {
     background-color: $color-primary;
     color: $color-white;
     transition: all 0.3s ease-out;
 }
+
+/* buttons */
+.btn, .cta-btn {
+    opacity: 1;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.heart-icon {
+    .fa-regular:hover{
+        animation: disappear 200ms 0s 1 forwards ease-in;
+    }
+    .fa-solid:hover{
+        animation: appear 200ms 0s 1 forwards ease-in;
+    }
+}
+
 
 
 
@@ -264,12 +422,13 @@ footer {
         color: $color-primary;
         position: relative;
         display: flex;
+        justify-content: center;
         align-items: center;
         background: $bg-dark;
         
 
         .explanation--content {
-            margin: 0 auto;
+            margin-top: 130px;
             width: 60%;
 
             .title {
