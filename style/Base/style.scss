@@ -1,5 +1,6 @@
 @import './resets';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import '../Layout/variables';
 
 * {
@@ -21,11 +22,22 @@ a:hover {
 
 body {
     display: flex;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     font-family : 'Roboto', Arial, 'sans-serif';
     background-color: $bg-color;
     color: $text-color;
+    overflow-x: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .loading-page {
@@ -53,6 +65,27 @@ body {
     }
 }
 
+.restaurant_background_image {
+    width: 100%;
+    height: 250px;
+    z-index: -2;
+    background-size: cover;
+    background-position: 0 30%;
+
+    &.page-1{
+        background-image: url('../../images/restaurants/a_la_francaise.jpg');
+    }
+    &.page-2{
+        background-image: url('../../images/restaurants/la_note_enchantee.jpg');
+    }
+    &.page-3{
+        background-image: url('../../images/restaurants/la_palette_du_gout.jpg');
+    }
+    &.page-4{
+        background-image: url('../../images/restaurants/le_delice_des_sens.jpg');
+    }
+}
+
 /* header */
 
 header {
@@ -62,20 +95,20 @@ header {
 }
 
 #location {
-    position: absolute;
     width: 100%;
     padding: 10px;
     bottom: 0;
 }
 
 .logo {
+    display: block;
     max-width: 250px;
     min-width: 150px;
     height: 50px;
-    margin: 20px;
+    margin: 3px;
 }
 
-/* all sections */
+/******** all sections *********/
 
 section {
     padding: 30px 10px 30px 10px;
@@ -86,9 +119,11 @@ section {
     }
 }
 
+/* main page */
+
 aside {
-    padding: 30px 15px 30px 15px;
-    height: 250px;
+    padding: 20px 15px 20px 15px;
+    height: fit-content;
 
     .cta-btn {
         margin: 20px;
@@ -102,7 +137,95 @@ aside {
     }
 }
 
-/* sections */
+/* menu pages */
+
+.menu {
+    margin-top: -25px;
+    border-radius: 30px 30px 0 0;
+    background: $color-lightgray;
+    width: 100%;
+
+    &--header {
+        width: 100%;
+    }
+
+    &--title {
+        font-family: 'Shrikhand', arial, sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-align: left;
+        font-style: italic;
+    }
+
+    &--starter-title, &--main_course-title, &--dessert-title {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        
+        & h4 {
+            text-align: left;
+            margin: 20px 0 15px 5px;
+        }
+
+        & .bar {
+            position: absolute;
+            left: 5px;
+            bottom: 0;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 2px;
+            background: green;
+        }
+    }
+
+    &--course-starter, &--course-main_course, &--course-dessert{
+        width: 100%;
+        height: fit-content;
+
+        .card:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .card {
+        border-radius: 10px;
+        height: fit-content;
+        width: 90%;
+        position: relative;
+
+        .dish {
+            width: 100%;
+            margin: 7px;
+            padding: 0;
+
+            h3, p {
+                text-align: left;
+            }
+
+            p{
+                opacity: 0.8;
+            }
+
+            .dish-price {
+                margin-top: 15px;
+            }
+        }
+        
+        .validation-btn {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            border: 1px solid red;
+            height: 65px;
+            width: 15%;
+            background-color: rgb(174, 250, 174);
+            color: $color-white;
+            border-radius: 10px;
+        }
+    }
+}
+
+/********** sections **********/
 
 #explanations {
 
@@ -229,7 +352,7 @@ footer {
     }
 }
 
-/* animations */
+/********* animations *********/
 
 /* loading page */
 $loading-time: 2000ms;
@@ -362,7 +485,7 @@ $loading-time-third: $loading-time +$delay-time*3;
 
 
 
-/* media queries tablet and desktop */
+/********* media queries tablet and desktop *********/
 
 @media screen and(min-width: 768px) {
 
@@ -374,9 +497,6 @@ $loading-time-third: $loading-time +$delay-time*3;
     }
 
     .container {
-    width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     }
@@ -401,7 +521,7 @@ $loading-time-third: $loading-time +$delay-time*3;
         grid-area: header;
         height: 15vh;
         width: 100%;
-        z-index: 1;
+        // z-index: 1;
         position: fixed;
 
         #location {

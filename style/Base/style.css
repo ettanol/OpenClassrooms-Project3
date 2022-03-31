@@ -1,5 +1,6 @@
 /* Box sizing rules */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 *,
 *::before,
 *::after {
@@ -194,7 +195,7 @@ h3 {
 }
 
 h4 {
-  font-weight: 550;
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -278,6 +279,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -288,6 +290,16 @@ body {
   font-family: 'Roboto', Arial, 'sans-serif';
   background-color: #F4F4F4;
   color: #111;
+  overflow-x: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .loading-page {
@@ -321,6 +333,30 @@ body {
   background-color: #FF79DA;
 }
 
+.restaurant_background_image {
+  width: 100%;
+  height: 250px;
+  z-index: -2;
+  background-size: cover;
+  background-position: 0 30%;
+}
+
+.restaurant_background_image.page-1 {
+  background-image: url("../../images/restaurants/a_la_francaise.jpg");
+}
+
+.restaurant_background_image.page-2 {
+  background-image: url("../../images/restaurants/la_note_enchantee.jpg");
+}
+
+.restaurant_background_image.page-3 {
+  background-image: url("../../images/restaurants/la_palette_du_gout.jpg");
+}
+
+.restaurant_background_image.page-4 {
+  background-image: url("../../images/restaurants/le_delice_des_sens.jpg");
+}
+
 /* header */
 header {
   height: -webkit-fit-content;
@@ -331,20 +367,20 @@ header {
 }
 
 #location {
-  position: absolute;
   width: 100%;
   padding: 10px;
   bottom: 0;
 }
 
 .logo {
+  display: block;
   max-width: 250px;
   min-width: 150px;
   height: 50px;
-  margin: 20px;
+  margin: 3px;
 }
 
-/* all sections */
+/******** all sections *********/
 section {
   padding: 30px 10px 30px 10px;
 }
@@ -354,9 +390,12 @@ section .title {
   text-align: left;
 }
 
+/* main page */
 aside {
-  padding: 30px 15px 30px 15px;
-  height: 250px;
+  padding: 20px 15px 20px 15px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 aside .cta-btn {
@@ -374,7 +413,100 @@ aside .cta-btn {
       align-self: center;
 }
 
-/* sections */
+/* menu pages */
+.menu {
+  margin-top: -25px;
+  border-radius: 30px 30px 0 0;
+  background: rgba(218, 218, 218, 0.3);
+  width: 100%;
+}
+
+.menu--header {
+  width: 100%;
+}
+
+.menu--title {
+  font-family: 'Shrikhand', arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+  font-style: italic;
+}
+
+.menu--starter-title, .menu--main_course-title, .menu--dessert-title {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.menu--starter-title h4, .menu--main_course-title h4, .menu--dessert-title h4 {
+  text-align: left;
+  margin: 20px 0 15px 5px;
+}
+
+.menu--starter-title .bar, .menu--main_course-title .bar, .menu--dessert-title .bar {
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 2px;
+  background: green;
+}
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.menu--course-starter .card:not(:last-of-type), .menu--course-main_course .card:not(:last-of-type), .menu--course-dessert .card:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.menu .card {
+  border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 90%;
+  position: relative;
+}
+
+.menu .card .dish {
+  width: 100%;
+  margin: 7px;
+  padding: 0;
+}
+
+.menu .card .dish h3, .menu .card .dish p {
+  text-align: left;
+}
+
+.menu .card .dish p {
+  opacity: 0.8;
+}
+
+.menu .card .dish .dish-price {
+  margin-top: 15px;
+}
+
+.menu .card .validation-btn {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  border: 1px solid red;
+  height: 65px;
+  width: 15%;
+  background-color: #aefaae;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/********** sections **********/
 #explanations .card {
   position: relative;
   width: 100%;
@@ -507,7 +639,7 @@ footer li a {
   color: #fff;
 }
 
-/* animations */
+/********* animations *********/
 /* loading page */
 @-webkit-keyframes loadingScreen {
   0% {
@@ -701,7 +833,7 @@ footer li a {
           animation: appear 200ms 0s 1 forwards ease-in;
 }
 
-/* media queries tablet and desktop */
+/********* media queries tablet and desktop *********/
 @media screen and (min-width: 768px) {
   body {
     background-color: #fff;
@@ -710,9 +842,6 @@ footer li a {
     margin: 0;
   }
   .container {
-    width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
     scroll-behavior: smooth;
     -ms-scroll-snap-type: y mandatory;
         scroll-snap-type: y mandatory;
@@ -738,7 +867,6 @@ footer li a {
     grid-area: header;
     height: 15vh;
     width: 100%;
-    z-index: 1;
     position: fixed;
   }
   header #location {
