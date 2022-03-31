@@ -18,25 +18,25 @@
     </head>
 
     <body class="d-flex column cross-axis-center">
-    <div class="container">
-        <header class="d-flex column cross-axis-center">
+    <div class="menu-container">
+        <header class="d-flex main-axis-center cross-axis-center">
+            <a class="back-arrow" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
             <img src="./images/ohmyfood.png" class="logo" alt="logo">
-            <div id="location" class="bg-discreet">
-                <span class="material-icons">
-                    room
-                </span>
-                <span class="location">Paris, Belleville</span>
-            </div>
         </header>
 
         <!-- background image -->
-        <div class="restaurant_background_image page-3"></div>
+        <div class="restaurant_background_image">
+            <img src="../../images/restaurants/la_palette_du_gout.jpg" alt="restaurant la palette du goût">
+        </div>
 
         <!-- menu -->
         <section class="card menu d-flex column cross-axis-center space-between">
             <div class="menu--header d-flex space-between">
                 <div class="menu--title"><h2 class="title">La palette du goût</h2></div>                                
-                <i class="fa-regular fa-heart"></i>
+                <div class="heart-icon">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
             </div>
 
             <div class="menu--course-starter d-flex column cross-axis-center"> <!-- starter -->

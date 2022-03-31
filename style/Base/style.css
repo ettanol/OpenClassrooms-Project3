@@ -293,13 +293,29 @@ body {
   overflow-x: hidden;
 }
 
-.container {
+.container, .menu-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
+}
+
+.menu-container header {
+  position: relative;
+  height: 60px;
+}
+
+.menu-container header .back-arrow {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 25px;
+}
+
+.menu-container header .logo {
+  margin: 0 auto;
 }
 
 .loading-page {
@@ -333,28 +349,11 @@ body {
   background-color: #FF79DA;
 }
 
+/*menu pages */
 .restaurant_background_image {
   width: 100%;
-  height: 250px;
-  z-index: -2;
+  height: 280px;
   background-size: cover;
-  background-position: 0 30%;
-}
-
-.restaurant_background_image.page-1 {
-  background-image: url("../../images/restaurants/a_la_francaise.jpg");
-}
-
-.restaurant_background_image.page-2 {
-  background-image: url("../../images/restaurants/la_note_enchantee.jpg");
-}
-
-.restaurant_background_image.page-3 {
-  background-image: url("../../images/restaurants/la_palette_du_gout.jpg");
-}
-
-.restaurant_background_image.page-4 {
-  background-image: url("../../images/restaurants/le_delice_des_sens.jpg");
 }
 
 /* header */
@@ -374,9 +373,8 @@ header {
 
 .logo {
   display: block;
-  max-width: 250px;
-  min-width: 150px;
-  height: 50px;
+  max-width: 150px;
+  height: 30px;
   margin: 3px;
 }
 
@@ -415,9 +413,11 @@ aside .cta-btn {
 
 /* menu pages */
 .menu {
-  margin-top: -25px;
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
   border-radius: 30px 30px 0 0;
   background: rgba(218, 218, 218, 0.3);
+  z-index: 2;
   width: 100%;
 }
 
@@ -425,12 +425,39 @@ aside .cta-btn {
   width: 100%;
 }
 
+.menu--header .heart-icon {
+  position: relative;
+  top: 0;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+}
+
+.menu--header .heart-icon .fa-regular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+
+.menu--header .heart-icon .fa-solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  color: #9356DC;
+  opacity: 0;
+}
+
 .menu--title {
   font-family: 'Shrikhand', arial, sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
   text-align: left;
-  font-style: italic;
+  height: 40px;
+}
+
+.menu--title .title {
+  letter-spacing: 1px;
+  font-size: 25px;
 }
 
 .menu--starter-title, .menu--main_course-title, .menu--dessert-title {
@@ -498,7 +525,6 @@ aside .cta-btn {
   visibility: hidden;
   position: absolute;
   right: 0;
-  border: 1px solid red;
   height: 65px;
   width: 15%;
   background-color: #aefaae;
@@ -787,7 +813,7 @@ footer li a {
   opacity: .8;
 }
 
-@-webkit-keyframes appear {
+@-webkit-keyframes buttonAppear {
   from {
     opacity: 0;
   }
@@ -796,7 +822,7 @@ footer li a {
   }
 }
 
-@keyframes appear {
+@keyframes buttonAppear {
   from {
     opacity: 0;
   }
@@ -805,7 +831,7 @@ footer li a {
   }
 }
 
-@-webkit-keyframes disappear {
+@-webkit-keyframes buttonDisappear {
   from {
     opacity: 1;
   }
@@ -814,7 +840,7 @@ footer li a {
   }
 }
 
-@keyframes disappear {
+@keyframes buttonDisappear {
   from {
     opacity: 1;
   }
@@ -824,13 +850,59 @@ footer li a {
 }
 
 .heart-icon .fa-regular:hover {
-  -webkit-animation: disappear 200ms 0s 1 forwards ease-in;
-          animation: disappear 200ms 0s 1 forwards ease-in;
+  -webkit-animation: buttonDisappear 200ms 0s 1 forwards ease-in;
+          animation: buttonDisappear 200ms 0s 1 forwards ease-in;
 }
 
 .heart-icon .fa-solid:hover {
-  -webkit-animation: appear 200ms 0s 1 forwards ease-in;
-          animation: appear 200ms 0s 1 forwards ease-in;
+  -webkit-animation: buttonAppear 200ms 0s 1 forwards ease-in;
+          animation: buttonAppear 200ms 0s 1 forwards ease-in;
+}
+
+/* menu cards appearance */
+@-webkit-keyframes slideInBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.menu--course-starter .card:nth-of-type(2), .menu--course-main_course .card:nth-of-type(2), .menu--course-dessert .card:nth-of-type(2) {
+  -webkit-animation: slideInBottom 1s 0s ease-out;
+          animation: slideInBottom 1s 0s ease-out;
+}
+
+.menu--course-starter .card:nth-of-type(3), .menu--course-main_course .card:nth-of-type(3), .menu--course-dessert .card:nth-of-type(3) {
+  -webkit-animation: transitionDelay 200ms 0s 1, slideInBottom 1s 200ms ease-out;
+          animation: transitionDelay 200ms 0s 1, slideInBottom 1s 200ms ease-out;
+}
+
+.menu--course-starter .card:nth-of-type(4), .menu--course-main_course .card:nth-of-type(4), .menu--course-dessert .card:nth-of-type(4) {
+  -webkit-animation: transitionDelay 400ms 0s 1, slideInBottom 1s 400ms 1 ease-out;
+          animation: transitionDelay 400ms 0s 1, slideInBottom 1s 400ms 1 ease-out;
+}
+
+.menu--course-starter .card:nth-of-type(5), .menu--course-main_course .card:nth-of-type(5), .menu--course-dessert .card:nth-of-type(5) {
+  -webkit-animation: transitionDelay 600ms 0s 1, slideInBottom 1s 600ms 1 ease-out;
+          animation: transitionDelay 600ms 0s 1, slideInBottom 1s 600ms 1 ease-out;
 }
 
 /********* media queries tablet and desktop *********/
