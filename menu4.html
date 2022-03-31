@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content = "Choisissez votre restaurant et votre menu. Plus de temps à perdre à consulter la carte!">
+        <meta name="copyright" content="Ohmyfood©">
+        <meta name="og:title" content="Ohmyfood!">
+        <meta name="og:type" content="reservation">
+        <meta name="og:url" content="https://www.ohmyfood.com">
+        <link rel="shortcut icon" type="image/png" href="./images/logo/favicon.png">
+        <meta name="theme-color" content="#9356DC"> <!-- safari tab-color : mauve -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link href="./style/Base/style.css" rel="stylesheet">
+        <title>Ohmyfood!</title>
+    </head>
+
+    <body class="d-flex column cross-axis-center">
+    <div class="menu-container">
+        <header class="d-flex main-axis-center cross-axis-center">
+            <a class="back-arrow" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src="./images/ohmyfood.png" class="logo" alt="logo">
+        </header>
+
+        <!-- background image -->
+        <div class="restaurant_background_image">
+            <img src="../../images/restaurants/le_delice_des_sens.jpg" alt="restaurant le délice des sens">
+        </div>
+
+        <!-- menu -->
+        <section class="card menu d-flex column cross-axis-center space-between">
+            <div class="menu--header d-flex space-between">
+                <div class="menu--title"><h2 class="title">Le délice des sens</h2></div>                                
+                <div class="heart-icon">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+            <div class="menu--course-starter d-flex column cross-axis-center"> <!-- starter -->
+                <div class="menu--starter-title">
+                    <h4 class="uppercase">Entrées</h4>
+                    <div class="bar"></div>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Tartare de thon</h3>
+                            <p>Assaisonné au yuzu</p>
+                        </div>
+                        <div class="dish-price"><strong>25€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Bouchée de homard croustillant</h3>
+                            <p>Et sa farandole de petits légumes</p>
+                        </div>
+                        <div class="dish-price"><strong>35€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Velouté de cèpes</h3>
+                            <p>Aux truffes</p>
+                        </div>
+                        <div class="dish-price"><strong>20€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+            </div>
+            <div class="menu--course-main_course d-flex column cross-axis-center"> <!-- main course -->
+                <div class="menu--main_course-title">
+                    <h4 class="uppercase">plats</h4>
+                    <div class="bar"></div>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Poulet rôti aux herbes de Provence</h3>
+                            <p>Et sa crème de truffe</p>
+                        </div>
+                        <div class="dish-price"><strong>40€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Langouste rôtie</h3>
+                            <p>Et ses légumes de saison</p>
+                        </div>
+                        <div class="dish-price"><strong>35€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Côte de boeuf Angus</h3>
+                            <p>Et sa purée de panais</p>
+                        </div>
+                        <div class="dish-price"><strong>44€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+            </div>
+            <div class="menu--course-dessert d-flex column cross-axis-center"> <!-- dessert-->
+                <div class="menu--dessert-title">
+                    <h4 class="uppercase">desserts</h4>
+                    <div class="bar"></div>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Farandole de desserts</h3>
+                            <p>Du chef</p>
+                        </div>
+                        <div class="dish-price"><strong>18€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Crème brulée</h3>
+                            <p>Revisitée</p>
+                        </div>
+                        <div class="dish-price"><strong>22€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+                <div class="card d-flex cross-axis-center space-between">
+                    <div class="dish d-flex space-between">
+                        <div class="dish-details d-flex column">
+                            <h3>Tiramisu</h3>
+                            <p>À la noisette</p>
+                        </div>
+                        <div class="dish-price"><strong>23€</strong></div>
+                    </div>
+                    <i class="fa-regular fa-circle-check validation-btn d-flex cross-axis-center main-axis-center"></i>
+                </div>
+            </div>
+        </section>
+
+        <aside id="CTA" class="bg-lightgray d-flex column">
+            <a href="#" class="cta-btn f-white">Commander</a>
+        </aside>
+
+        <footer class="page">
+            <img src="./images/logos/ohmyfood.png" class="logo" alt="logo">
+            <nav class="footer--navbar">
+                <ul>
+                    <li><span class="material-icons">restaurant</span><a href="#">Proposer un restaurant</a></li>
+                    <li><span class="material-icons">handshake</span><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    </body>
+</html>

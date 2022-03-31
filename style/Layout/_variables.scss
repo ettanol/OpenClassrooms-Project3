@@ -1,0 +1,169 @@
+$bg-dark : #111;
+$bg-color: #F4F4F4;
+
+$color-primary : #9356DC;
+$color-secondary : #FF79DA;
+$color-tertiary : #99E2D0;
+$text-color: #111;
+$color-white: #fff;
+$color-discreet: rgba(200, 200, 200, .5);
+$color-lightgray: rgba(218, 218, 218, 0.3);
+
+/* display */ 
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+/* to organise flexboxes and grids */
+
+.main-axis-center {
+    display: flex;
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.cross-axis-center {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/*cards */
+
+.card {
+    height: fit-content;
+    background-color: $color-white;
+}
+
+.shadow {
+box-shadow: 5px 5px 10px #AAA;
+}
+
+.rounded {
+    border-radius: 20px;
+}
+
+/* objects */
+
+a {
+    text-decoration: none;
+    transform: scale(1);
+    
+    &:hover {
+        transform: scale(1.15);
+        transition: transform 200ms ease-out;
+    }
+}
+
+img {
+    width: 100%;
+}
+  
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+/* text */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+h1{
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+h2 {
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-weight: 550;
+    font-size: 1.1rem;
+  }
+  
+  h4 {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  
+.banner {
+    margin-top: 75px;
+  }
+
+/* colors */
+
+.bg-primary {
+    background-color: $color-primary;
+}
+
+.bg-secondary {
+    background-color: $color-secondary;
+}
+
+.bg-tertiary {
+    background-color: $color-tertiary;
+}
+
+.bg-color {
+    background-color: $bg-color;
+}
+
+.bg-discreet {
+    background-color: $color-discreet;
+}
+
+.bg-lightgray {
+    background-color: $color-lightgray;
+}
+
+.bg-dark {
+    background-color: $bg-dark;
+}
+
+.discreet {
+    color: $color-discreet;
+}
+
+.f-white {
+    color: $color-white;
+}
+
+.f-lightgray {
+    color: $color-lightgray;
+}
+.highlighted {
+    color: $color-primary;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+.color-tertiary {
+    color: $color-tertiary;
+}

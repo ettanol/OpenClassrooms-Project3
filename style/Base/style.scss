@@ -1,0 +1,722 @@
+@import './resets';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import '../Layout/variables';
+
+* {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+a:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    font-family : 'Roboto', Arial, 'sans-serif';
+    background-color: $bg-color;
+    color: $text-color;
+    overflow-x: hidden;
+}
+
+.container, .menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.menu-container {
+
+    header {
+    position: relative;
+    height: 60px;
+    
+    .back-arrow {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 25px;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+    }
+}
+
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    margin-right: 10px;
+
+    &:nth-of-type(2) {
+        background-color: $color-secondary;
+    }
+}
+
+/*menu pages */
+
+.restaurant_background_image {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+}
+
+/* header */
+
+header {
+    height: fit-content;
+    background: #fff;
+    position: relative;
+}
+
+
+
+#location {
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+}
+
+.logo {
+    display: block;
+    max-width: 150px;
+    height: 30px;
+    margin: 3px;
+}
+
+/******** all sections *********/
+
+section {
+    padding: 30px 10px 30px 10px;
+
+    .title {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+}
+
+/* main page */
+
+aside {
+    padding: 20px 15px 20px 15px;
+    height: fit-content;
+
+    .cta-btn {
+        margin: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
+        border-radius: 20px;
+        border: none;
+        width: fit-content;
+        font-weight: 500;
+        align-self: center;
+    }
+}
+
+/* menu pages */
+
+.menu {
+    transform: translateY(-25px);
+    border-radius: 30px 30px 0 0;
+    background: $color-lightgray;
+    z-index: 2;
+    width: 100%;
+
+    &--header {
+        width: 100%;
+
+        .heart-icon {
+            position: relative;
+            top: 0;
+            right: 20px;
+            height: 30px;
+            width: 30px;
+            .fa-regular{
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 30px;
+            }
+            .fa-solid{
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 30px;
+                color: $color-primary;
+                opacity: 0;
+            }
+        }
+    }
+
+    &--title {
+        font-family: 'Shrikhand', arial, sans-serif;
+        text-align: left;
+        height: 40px;
+        
+        .title {
+            letter-spacing: 1px;
+            font-size: 25px;
+        }
+    }
+
+    &--starter-title, &--main_course-title, &--dessert-title {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        
+        & h4 {
+            text-align: left;
+            margin: 20px 0 15px 5px;
+        }
+
+        & .bar {
+            position: absolute;
+            left: 5px;
+            bottom: 0;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 2px;
+            background: green;
+        }
+    }
+
+    &--course-starter, &--course-main_course, &--course-dessert{
+        width: 100%;
+        height: fit-content;
+
+        .card:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .card {
+        border-radius: 10px;
+        height: fit-content;
+        width: 90%;
+        position: relative;
+
+        .dish {
+            width: 100%;
+            margin: 7px;
+            padding: 0;
+
+            h3, p {
+                text-align: left;
+            }
+
+            p{
+                opacity: 0.8;
+            }
+
+            .dish-price {
+                margin-top: 15px;
+            }
+        }
+        
+        .validation-btn {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            height: 65px;
+            width: 15%;
+            background-color: rgb(174, 250, 174);
+            color: $color-white;
+            border-radius: 10px;
+        }
+    }
+}
+
+/********** sections **********/
+
+#explanations {
+
+    .card {
+        position: relative;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 20px 30px;
+        border-radius: 20px;
+
+        p {
+            font-weight: 600;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        
+            .steps {
+                position: absolute;
+                left: -10px;
+                top: 40%;
+                left: -5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                font-size: 12px;
+                font-weight: 500;
+                border: none;
+                background-color: $color-primary;
+                color: $color-white;
+            }
+    }
+}
+
+#restaurants {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    .card {
+        height: 400px;
+        width: 100%;
+        position: relative;
+    }
+    
+    .card:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .details {
+        margin: 10px;
+    }
+    
+    img {
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+        max-width: 100%;
+        height: 80%;
+        object-position: 0% 60%;
+    }
+
+    .new {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: fit-content;
+        padding: 3px;
+        background-color: $color-tertiary;
+        color: #11D2F1;
+        height: auto;
+        border: none;
+    }
+
+    .heart-icon {
+        position: relative;
+        margin-right: 20px;
+        height: 30px;
+        width: 30px;
+
+        .fa-solid, .fa-regular {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 30px;
+        }
+
+        .fa-solid {
+            opacity: 0;
+            color: $color-primary;
+        }
+
+        .fa-regular {
+            opacity: 1;
+        }
+    }
+}
+
+/* footer */
+
+footer {
+    margin: 0;
+    background-color: #444;
+    
+    nav {
+        width: 80%;
+        height: 100%;
+        left: 0;
+        padding: 10px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li{
+        text-align: left;
+        list-style-type: none;
+        margin-left: 0;
+        color: $color-white;
+
+        a{
+            color: $color-white;
+        }
+    }
+}
+
+/********* animations *********/
+
+/* loading page */
+$loading-time: 2000ms;
+
+@keyframes loadingScreen {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes loadingDots {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+.loading-page {
+    animation: loadingScreen $loading-time 0s 1 forwards;
+}
+
+.loading-spinner {
+    animation: loadingDots $loading-time/2 0s 2 ease-out;
+
+    &:nth-of-type(2){
+        animation-delay: 200ms;
+    }
+    
+    &:nth-of-type(3){
+        animation-delay: 400ms;
+    }
+}
+
+
+
+/* card appearance effect once the page is loaded */
+$delay-time : 200ms;
+$loading-time-first : $loading-time +$delay-time;
+$loading-time-second: $loading-time +$delay-time*2;
+$loading-time-third: $loading-time +$delay-time*3;
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes transitionDelay { /* to keep the card opacity to 0 before the animation */
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#explanations .card {
+    animation:  $loading-time-first transitionDelay,
+                1s ease-out $loading-time-first 1 slideInLeft forwards;
+    
+    &:nth-of-type(2){
+        animation:  $loading-time-second transitionDelay, 
+                    1s ease-out $loading-time-second 1 slideInLeft forwards;
+    }
+    
+    &:nth-of-type(3){
+        animation:  $loading-time-third transitionDelay, 
+                    1s ease-out $loading-time-third 1 slideInLeft forwards;
+    }
+}
+
+
+#explanations .card:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    transition: all 0.3s ease-out;
+}
+
+/* buttons */
+.btn, .cta-btn {
+    opacity: 1;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonDisappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.heart-icon {
+    .fa-regular:hover{
+        animation: buttonDisappear 200ms 0s 1 forwards ease-in;
+    }
+    .fa-solid:hover{
+        animation:buttonAppear 200ms 0s 1 forwards ease-in;
+    }
+}
+
+/* menu cards appearance */
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+    .card {
+        &:nth-of-type(2) {
+            animation: slideInBottom 1s 0s ease-out;
+        }
+        &:nth-of-type(3) {
+            animation: transitionDelay $delay-time 0s 1, 
+            slideInBottom 1s $delay-time* 1 ease-out;
+        }
+        &:nth-of-type(4) {
+            animation: transitionDelay $delay-time*2 0s 1, 
+            slideInBottom 1s $delay-time*2 1 ease-out;
+        }
+        &:nth-of-type(5) {
+            animation: transitionDelay $delay-time*3 0s 1, 
+            slideInBottom 1s $delay-time*3 1 ease-out;
+        }
+    }
+}
+
+
+
+
+/********* media queries tablet and desktop *********/
+
+@media screen and(min-width: 768px) {
+
+    body {
+        background-color: $color-white;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .container {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    }
+
+    .page {
+        display: grid;
+        grid-template-columns: 1fr;
+        scroll-snap-align: center;
+    }
+
+    .page:nth-of-type(1) {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'section'
+        'aside';
+    }
+
+    header {
+        grid-area: header;
+        height: 15vh;
+        width: 100%;
+        // z-index: 1;
+        position: fixed;
+
+        #location {
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    #explanations {
+        grid-area: section;
+        height: 75vh;
+        color: $color-primary;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $bg-dark;
+        
+
+        .explanation--content {
+            margin-top: 130px;
+            width: 60%;
+
+            .title {
+                font-size: 30px;
+                font-weight: 700;
+            }
+        }
+
+        .card {
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(-10deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+            color: $color-white;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                height: 30px;
+                width: auto;
+            }
+
+            p{
+            font-weight: 400;
+            font-size: 25px;
+            }
+
+            .steps {
+                background-color: $color-secondary;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .card:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .shadow {
+            box-shadow: none;
+        }
+    }
+    
+    #CTA {
+        grid-area: aside;
+        background-color: $bg-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 25vh;
+
+        .cta-btn {
+            align-self: center;
+        }
+    }
+
+
+    #restaurants {
+        grid-area: restaurants;
+        height: 100vh;
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 75px;
+        justify-self: center;
+
+        .title {
+            margin-left: 30px;
+        }
+
+        .restaurants--cards {
+            align-self: center;
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            }
+
+        .card {
+            margin: 30px 10px;
+            width: 400px;
+            height: 300px;
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        height: 100vh;
+
+        .footer--navbar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            
+            ul {
+                line-height: 4rem;
+                
+                li{
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
