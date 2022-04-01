@@ -275,6 +275,26 @@ a:hover {
           transform: scale(1.1);
 }
 
+html {
+  min-width: 320px;
+  max-width: 1440px;
+  scroll-behavior: smooth;
+}
+
+/* custom scrollbar */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #9356DC;
+  border-radius: 25px;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,26 +314,24 @@ body {
 }
 
 .container, .menu-container {
-  position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
 }
 
-.menu-container header {
-  position: relative;
+.container aside {
+  margin-top: 90px;
+  /* to make the content visible */
 }
 
-.menu-container header .back-arrow {
+.menu-container .back-arrow {
   position: absolute;
   top: 10px;
   left: 20px;
   font-size: 25px;
 }
 
-.menu-container header .logo {
+.menu-container .logo {
   margin: 0 auto;
 }
 
@@ -333,7 +351,7 @@ body {
   background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
   height: 100vh;
   width: 100vw;
-  z-index: 2;
+  z-index: 3;
 }
 
 .loading-spinner {
@@ -361,8 +379,11 @@ header {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: 100%;
   background: #fff;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
 #location {
@@ -395,7 +416,7 @@ header {
 
 /******** all sections *********/
 section {
-  padding: 30px 10px 30px 10px;
+  padding: 30px 15px;
 }
 
 section .title {
@@ -436,7 +457,6 @@ aside .cta-btn {
   opacity: 1;
   -webkit-transform: perspective(2px);
           transform: perspective(2px);
-  z-index: 10;
   width: 100%;
 }
 
@@ -497,8 +517,8 @@ aside .cta-btn {
   left: 5px;
   bottom: 0;
   margin-bottom: 10px;
-  width: 50px;
-  height: 2px;
+  width: 40px;
+  height: 3px;
   background: rgba(60, 219, 203, 0.4);
 }
 
@@ -569,14 +589,17 @@ aside .cta-btn {
 
 .menu .card .validation-btn i {
   margin-left: 15px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /********** sections **********/
+#explanations {
+  margin-bottom: 0;
+}
+
 #explanations .card {
   position: relative;
   width: 100%;
-  margin-bottom: 15px;
   padding: 20px 30px;
   border-radius: 20px;
   -webkit-box-shadow: 0px 29px 58px -5px rgba(200, 200, 200, 0.5);
@@ -611,6 +634,10 @@ aside .cta-btn {
   color: #fff;
 }
 
+#explanations .card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 #restaurants {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -622,6 +649,8 @@ aside .cta-btn {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  padding-top: 100px;
+  scroll-snap-align: center;
 }
 
 #restaurants a:hover {
@@ -698,6 +727,7 @@ aside .cta-btn {
 /* footer */
 footer {
   margin: 0;
+  padding: 10px;
   background-color: #444;
 }
 
@@ -706,6 +736,12 @@ footer nav {
   height: 100%;
   left: 0;
   padding: 10px;
+}
+
+footer img {
+  margin-bottom: 10px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 footer ul {
@@ -1014,23 +1050,23 @@ footer li a {
 
 @-webkit-keyframes rotation {
   0% {
-    -webkit-transform: translateX(20px) rotate(0);
-            transform: translateX(20px) rotate(0);
+    -webkit-transform: translateX(20px) rotate(-270deg);
+            transform: translateX(20px) rotate(-270deg);
   }
   100% {
-    -webkit-transform: translateX(0) rotate(-360deg);
-            transform: translateX(0) rotate(-360deg);
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0);
   }
 }
 
 @keyframes rotation {
   0% {
-    -webkit-transform: translateX(20px) rotate(0);
-            transform: translateX(20px) rotate(0);
+    -webkit-transform: translateX(20px) rotate(-270deg);
+            transform: translateX(20px) rotate(-270deg);
   }
   100% {
-    -webkit-transform: translateX(0) rotate(-360deg);
-            transform: translateX(0) rotate(-360deg);
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0);
   }
 }
 
