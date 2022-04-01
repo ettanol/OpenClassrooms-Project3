@@ -434,9 +434,10 @@ aside .cta-btn {
   margin-top: -25px;
   border-radius: 30px 30px 0 0;
   background: rgba(218, 218, 218, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   -webkit-transform: perspective(2px);
           transform: perspective(2px);
-  border: 1px solid red;
   z-index: 10;
   width: 100%;
 }

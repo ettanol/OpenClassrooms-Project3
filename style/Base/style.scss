@@ -164,6 +164,7 @@ aside {
     margin-top: -25px;
     border-radius: 30px 30px 0 0;
     background: $color-lightgray;
+    backdrop-filter: blur(5px);
     transform: perspective(2px);
     z-index: 10;
     width: 100%;
