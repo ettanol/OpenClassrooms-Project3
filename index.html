@@ -19,19 +19,19 @@
 
     <body class="d-flex column cross-axis-center">
     <div class="container">
-        <div class="loading-page">
+        <!-- <div class="loading-page">
             <div class="loading-spinner"></div>
             <div class="loading-spinner"></div>
             <div class="loading-spinner"></div>
-        </div>
+        </div> -->
         <!-- desktop page 1 -->
         <div class="page">
             <header class="d-flex column cross-axis-center">
-                <img src="./images/ohmyfood.png" class="logo" alt="logo">
-                <div id="location" class="bg-discreet">
-                    <span class="material-icons">
-                        room
-                    </span>
+                <div class="logo-box cross-axis-center main-axis-center">
+                    <img src="./images/ohmyfood.png" class="logo" alt="logo">
+                </div>
+                <div id="location" class="bg-discreet main-axis-center cross-axis-center">
+                    <i class="fa-solid fa-location-dot"></i>
                     <span class="location">Paris, Belleville</span>
                 </div>
             </header>
@@ -47,23 +47,17 @@
                     <h2 class="title">Fonctionnement</h2>
                     <div class="card rounded shadow d-flex">
                         <button class="steps">1</button>
-                        <span class="material-icons">
-                            phone_iphone
-                        </span>
+                        <i class="fa-solid fa-mobile-screen-button"></i>
                         <p>Choisissez un restaurant</p>
                     </div>
                     <div class="card rounded shadow d-flex">
                         <button class="steps">2</button>
-                        <span class="material-icons">
-                            list
-                        </span>
+                        <i class="fa-solid fa-list-ul"></i>
                         <p>Composez votre menu</p>
                     </div>
                     <div class="card rounded shadow d-flex">
                         <button class="steps">3</button>
-                        <span class="material-icons">
-                            storefront
-                        </span>
+                        <i class="fa-solid fa-store"></i>
                         <p>Dégustez au restaurant</p>
                     </div>
                 </div>
@@ -138,8 +132,13 @@
             <img src="./images/logos/ohmyfood.png" class="logo" alt="logo">
             <nav class="footer--navbar">
                 <ul>
-                    <li><span class="material-icons">restaurant</span><a href="#">Proposer un restaurant</a></li>
-                    <li><span class="material-icons">handshake</span><a href="#">Devenir partenaire</a></li>
+                    <li>
+                        <i class="fa-solid fa-utensils"></i>
+                        <a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li><i class="fa-solid fa-handshake-angle"></i>
+                        <a href="#">Devenir partenaire</a>
+                    </li>
                     <li><a href="#">Mentions légales</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
