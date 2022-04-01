@@ -44,7 +44,6 @@ body {
 
     header {
     position: relative;
-    height: 60px;
     
     .back-arrow {
         position: absolute;
@@ -89,6 +88,8 @@ body {
 .restaurant_background_image {
     width: 100%;
     height: 280px;
+    background: url('../../images/restaurants/a_la_francaise.jpg');
+    z-index: -1;
     background-size: cover;
 }
 
@@ -100,19 +101,31 @@ header {
     position: relative;
 }
 
-
-
 #location {
     width: 100%;
     padding: 10px;
     bottom: 0;
+    font-weight: 500;
+    
+    i{
+        top: -2px;
+        margin-right: 5px;
+    }
+    
+    i, span {
+        opacity: .7;
+    }
 }
 
 .logo {
-    display: block;
     max-width: 150px;
     height: 30px;
-    margin: 3px;
+}
+
+.logo-box {
+    height: 50px;
+    width: 100%;
+    box-shadow: 2px 2px 5px $color-discreet;
 }
 
 /******** all sections *********/
@@ -138,6 +151,7 @@ aside {
         background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
         border-radius: 20px;
         border: none;
+        box-shadow: 0px 29px 58px -15px $color-discreet;
         width: fit-content;
         font-weight: 500;
         align-self: center;
@@ -147,10 +161,11 @@ aside {
 /* menu pages */
 
 .menu {
-    transform: translateY(-25px);
+    margin-top: -25px;
     border-radius: 30px 30px 0 0;
     background: $color-lightgray;
-    z-index: 2;
+    border: 1px solid red;
+    z-index: 10;
     width: 100%;
 
     &--header {
@@ -207,7 +222,7 @@ aside {
             margin-bottom: 10px;
             width: 50px;
             height: 2px;
-            background: green;
+            background: rgba(60, 219, 203, .4);
         }
     }
 
@@ -222,25 +237,36 @@ aside {
 
     .card {
         border-radius: 10px;
-        height: fit-content;
+        height: 65px;
         width: 90%;
+        margin-left: 5px;
         position: relative;
 
         .dish {
+            position: relative;
+            left: 0;
             width: 100%;
+            height: 100%;
             margin: 7px;
             padding: 0;
-
+            
             h3, p {
                 text-align: left;
             }
-
+            
             p{
                 opacity: 0.8;
             }
-
-            .dish-price {
-                margin-top: 15px;
+            
+            .dish-price{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding: 0 5px 5px 0;
+                width: 15%;
+                height: 100%;
+                border-radius: 0 10px 10px 0;
+                background-color: $color-white;
             }
         }
         
@@ -250,9 +276,15 @@ aside {
             right: 0;
             height: 65px;
             width: 15%;
-            background-color: rgb(174, 250, 174);
+            background-color: rgba(60, 219, 203, .4);
             color: $color-white;
             border-radius: 10px;
+            z-index: -1;
+
+            i {
+                margin-left: 15px;
+                font-size: 18px;
+            }
         }
     }
 }
@@ -267,27 +299,35 @@ aside {
         margin-bottom: 15px;
         padding: 20px 30px;
         border-radius: 20px;
+        box-shadow: 0px 29px 58px -5px $color-discreet;
+
+        i {
+            font-weight: 600;
+            font-size: 18px;
+            color: #777;
+            margin-top: 3px;
+            margin-left: 10px;
+        }
 
         p {
             font-weight: 600;
-            font-size: 15px;
-            margin-left: 20px;
+            font-size: 16px;
+            margin-left: 25px;
         }
         
-            .steps {
-                position: absolute;
-                left: -10px;
-                top: 40%;
-                left: -5px;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                font-size: 12px;
-                font-weight: 500;
-                border: none;
-                background-color: $color-primary;
-                color: $color-white;
-            }
+        .steps {
+            position: absolute;
+            left: -8px;
+            top: 32%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            background-color: $color-primary;
+            color: $color-white;
+        }
     }
 }
 
@@ -295,6 +335,12 @@ aside {
     display: flex;
     flex-direction: column;
     height: fit-content;
+
+    a {
+        &:hover {
+            transform: scale(1.01);
+        }
+    }
 
     .card {
         height: 400px;
@@ -308,6 +354,10 @@ aside {
 
     .details {
         margin: 10px;
+    }
+
+    .restaurant-location {
+        text-align: left;
     }
     
     img {
@@ -323,16 +373,17 @@ aside {
         right: 20px;
         top: 20px;
         width: fit-content;
-        padding: 3px;
+        padding: 5px;
         background-color: $color-tertiary;
-        color: #11D2F1;
+        color: darken($color-tertiary, 30%);
         height: auto;
         border: none;
     }
 
     .heart-icon {
-        position: relative;
-        margin-right: 20px;
+        position: absolute;
+        bottom: 35px;
+        right: 35px;
         height: 30px;
         width: 30px;
 
@@ -376,6 +427,7 @@ footer {
         text-align: left;
         list-style-type: none;
         margin-left: 0;
+        margin-bottom: 7px;
         color: $color-white;
 
         a{
@@ -473,9 +525,12 @@ $loading-time-third: $loading-time +$delay-time*3;
 
 
 #explanations .card:hover {
-    background-color: $color-primary;
-    color: $color-white;
+    background: lighten($color-primary, 30%);
     transition: all 0.3s ease-out;
+
+    i{
+        color: $color-primary;
+    }
 }
 
 /* buttons */
@@ -490,9 +545,11 @@ $loading-time-third: $loading-time +$delay-time*3;
 @keyframes buttonAppear {
     from {
         opacity: 0;
+        visibility: hidden;
     }
     to {
         opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -547,7 +604,53 @@ $loading-time-third: $loading-time +$delay-time*3;
     }
 }
 
+/* animation for the validation button */
 
+$validation-btn-timing: 300ms;
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-40px);
+    }
+}
+@keyframes appearance {
+    from {
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateX(20px) rotate(0);
+    }
+    100% {
+        transform: translateX(0) rotate(-360deg);
+    }
+}
+
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+    .card {
+        &:hover {
+            .validation-btn {
+                animation:  appearance $validation-btn-timing ease-out forwards;
+
+                i{
+                    animation: rotation $validation-btn-timing ease-out forwards;
+                }        
+            }
+            .dish-price{
+                animation: slideInRight $validation-btn-timing ease-out forwards;
+            }
+        }
+    }
+}
 
 
 /********* media queries tablet and desktop *********/

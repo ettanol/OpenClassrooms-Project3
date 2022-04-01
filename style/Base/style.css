@@ -304,7 +304,6 @@ body {
 
 .menu-container header {
   position: relative;
-  height: 60px;
 }
 
 .menu-container header .back-arrow {
@@ -353,6 +352,8 @@ body {
 .restaurant_background_image {
   width: 100%;
   height: 280px;
+  background: url("../../images/restaurants/a_la_francaise.jpg");
+  z-index: -1;
   background-size: cover;
 }
 
@@ -369,13 +370,28 @@ header {
   width: 100%;
   padding: 10px;
   bottom: 0;
+  font-weight: 500;
+}
+
+#location i {
+  top: -2px;
+  margin-right: 5px;
+}
+
+#location i, #location span {
+  opacity: .7;
 }
 
 .logo {
-  display: block;
   max-width: 150px;
   height: 30px;
-  margin: 3px;
+}
+
+.logo-box {
+  height: 50px;
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.5);
+          box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.5);
 }
 
 /******** all sections *********/
@@ -402,6 +418,8 @@ aside .cta-btn {
   background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
   border-radius: 20px;
   border: none;
+  -webkit-box-shadow: 0px 29px 58px -15px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 29px 58px -15px rgba(200, 200, 200, 0.5);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -413,11 +431,11 @@ aside .cta-btn {
 
 /* menu pages */
 .menu {
-  -webkit-transform: translateY(-25px);
-          transform: translateY(-25px);
+  margin-top: -25px;
   border-radius: 30px 30px 0 0;
   background: rgba(218, 218, 218, 0.3);
-  z-index: 2;
+  border: 1px solid red;
+  z-index: 10;
   width: 100%;
 }
 
@@ -480,7 +498,7 @@ aside .cta-btn {
   margin-bottom: 10px;
   width: 50px;
   height: 2px;
-  background: green;
+  background: rgba(60, 219, 203, 0.4);
 }
 
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
@@ -496,15 +514,17 @@ aside .cta-btn {
 
 .menu .card {
   border-radius: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 65px;
   width: 90%;
+  margin-left: 5px;
   position: relative;
 }
 
 .menu .card .dish {
+  position: relative;
+  left: 0;
   width: 100%;
+  height: 100%;
   margin: 7px;
   padding: 0;
 }
@@ -518,7 +538,20 @@ aside .cta-btn {
 }
 
 .menu .card .dish .dish-price {
-  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 5px 5px 0;
+  width: 15%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  background-color: #fff;
 }
 
 .menu .card .validation-btn {
@@ -527,9 +560,15 @@ aside .cta-btn {
   right: 0;
   height: 65px;
   width: 15%;
-  background-color: #aefaae;
+  background-color: rgba(60, 219, 203, 0.4);
   color: #fff;
   border-radius: 10px;
+  z-index: -1;
+}
+
+.menu .card .validation-btn i {
+  margin-left: 15px;
+  font-size: 18px;
 }
 
 /********** sections **********/
@@ -539,19 +578,28 @@ aside .cta-btn {
   margin-bottom: 15px;
   padding: 20px 30px;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 29px 58px -5px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 29px 58px -5px rgba(200, 200, 200, 0.5);
+}
+
+#explanations .card i {
+  font-weight: 600;
+  font-size: 18px;
+  color: #777;
+  margin-top: 3px;
+  margin-left: 10px;
 }
 
 #explanations .card p {
   font-weight: 600;
-  font-size: 15px;
-  margin-left: 20px;
+  font-size: 16px;
+  margin-left: 25px;
 }
 
 #explanations .card .steps {
   position: absolute;
-  left: -10px;
-  top: 40%;
-  left: -5px;
+  left: -8px;
+  top: 32%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -575,6 +623,11 @@ aside .cta-btn {
   height: fit-content;
 }
 
+#restaurants a:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
 #restaurants .card {
   height: 400px;
   width: 100%;
@@ -587,6 +640,10 @@ aside .cta-btn {
 
 #restaurants .details {
   margin: 10px;
+}
+
+#restaurants .restaurant-location {
+  text-align: left;
 }
 
 #restaurants img {
@@ -606,16 +663,17 @@ aside .cta-btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 3px;
+  padding: 5px;
   background-color: #99E2D0;
-  color: #11D2F1;
+  color: #32b091;
   height: auto;
   border: none;
 }
 
 #restaurants .heart-icon {
-  position: relative;
-  margin-right: 20px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
   height: 30px;
   width: 30px;
 }
@@ -658,6 +716,7 @@ footer li {
   text-align: left;
   list-style-type: none;
   margin-left: 0;
+  margin-bottom: 7px;
   color: #fff;
 }
 
@@ -798,10 +857,13 @@ footer li a {
 }
 
 #explanations .card:hover {
-  background-color: #9356DC;
-  color: #fff;
+  background: #e4d5f6;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+
+#explanations .card:hover i {
+  color: #9356DC;
 }
 
 /* buttons */
@@ -816,18 +878,22 @@ footer li a {
 @-webkit-keyframes buttonAppear {
   from {
     opacity: 0;
+    visibility: hidden;
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 
 @keyframes buttonAppear {
   from {
     opacity: 0;
+    visibility: hidden;
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -903,6 +969,83 @@ footer li a {
 .menu--course-starter .card:nth-of-type(5), .menu--course-main_course .card:nth-of-type(5), .menu--course-dessert .card:nth-of-type(5) {
   -webkit-animation: transitionDelay 600ms 0s 1, slideInBottom 1s 600ms 1 ease-out;
           animation: transitionDelay 600ms 0s 1, slideInBottom 1s 600ms 1 ease-out;
+}
+
+/* animation for the validation button */
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+}
+
+@-webkit-keyframes appearance {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes appearance {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: translateX(20px) rotate(0);
+            transform: translateX(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(-360deg);
+            transform: translateX(0) rotate(-360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: translateX(20px) rotate(0);
+            transform: translateX(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(-360deg);
+            transform: translateX(0) rotate(-360deg);
+  }
+}
+
+.menu--course-starter .card:hover .validation-btn, .menu--course-main_course .card:hover .validation-btn, .menu--course-dessert .card:hover .validation-btn {
+  -webkit-animation: appearance 300ms ease-out forwards;
+          animation: appearance 300ms ease-out forwards;
+}
+
+.menu--course-starter .card:hover .validation-btn i, .menu--course-main_course .card:hover .validation-btn i, .menu--course-dessert .card:hover .validation-btn i {
+  -webkit-animation: rotation 300ms ease-out forwards;
+          animation: rotation 300ms ease-out forwards;
+}
+
+.menu--course-starter .card:hover .dish-price, .menu--course-main_course .card:hover .dish-price, .menu--course-dessert .card:hover .dish-price {
+  -webkit-animation: slideInRight 300ms ease-out forwards;
+          animation: slideInRight 300ms ease-out forwards;
 }
 
 /********* media queries tablet and desktop *********/
