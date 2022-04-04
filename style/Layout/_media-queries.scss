@@ -1,0 +1,170 @@
+/********* media queries tablet and desktop *********/
+
+@media screen and(min-width: 768px) {
+
+    body {
+        background-color: $color-white;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .container {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    }
+
+    .page {
+        display: grid;
+        grid-template-columns: 1fr;
+        scroll-snap-align: center;
+    }
+
+    .page:nth-of-type(1) {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'section'
+        'aside';
+    }
+
+    header {
+        grid-area: header;
+        height: 15vh;
+        width: 100%;
+        // z-index: 1;
+        position: fixed;
+
+        #location {
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    #explanations {
+        grid-area: section;
+        height: 75vh;
+        color: $color-primary;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $bg-dark;
+        
+
+        .explanation--content {
+            margin-top: 130px;
+            width: 60%;
+
+            .title {
+                font-size: 30px;
+                font-weight: 700;
+            }
+        }
+
+        .card {
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(-10deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+            color: $color-white;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                height: 30px;
+                width: auto;
+            }
+
+            p{
+            font-weight: 400;
+            font-size: 25px;
+            }
+
+            .steps {
+                background-color: $color-secondary;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .card:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .shadow {
+            box-shadow: none;
+        }
+    }
+    
+    #CTA {
+        grid-area: aside;
+        background-color: $bg-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 25vh;
+
+        .cta-btn {
+            align-self: center;
+        }
+    }
+
+
+    #restaurants {
+        grid-area: restaurants;
+        height: 100vh;
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 75px;
+        justify-self: center;
+
+        .title {
+            margin-left: 30px;
+        }
+
+        .restaurants--cards {
+            align-self: center;
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            }
+
+        .card {
+            margin: 30px 10px;
+            width: 400px;
+            height: 300px;
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        height: 100vh;
+
+        .footer--navbar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            
+            ul {
+                line-height: 4rem;
+                
+                li{
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

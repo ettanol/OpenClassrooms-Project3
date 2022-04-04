@@ -1,9 +1,8 @@
 @import '../Layout/variables';
 
-@function textColor($color) {
-    @if (lightness($color)>70) {
-        @return #111;
-    } @else {
-        @return #fff;
-    }
+/* check if content is being overflowed by another content 
+display dots
+make the dots pushed by the content */
+
+@function isOverflowed () {
 }

@@ -1,0 +1,215 @@
+/********* animations *********/
+
+/* loading page */
+$loading-time: 2000ms;
+
+@keyframes loadingScreen {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes loadingDots {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+.loading-page {
+    animation: loadingScreen $loading-time 0s 1 forwards;
+}
+
+.loading-spinner {
+    animation: loadingDots $loading-time/2 0s 2 ease-out;
+
+    &:nth-of-type(2){
+        animation-delay: 200ms;
+    }
+    
+    &:nth-of-type(3){
+        animation-delay: 400ms;
+    }
+}
+
+
+
+/* card appearance effect once the page is loaded */
+$delay-time : 200ms;
+$loading-time-first : $loading-time +$delay-time;
+$loading-time-second: $loading-time +$delay-time*2;
+$loading-time-third: $loading-time +$delay-time*3;
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes transitionDelay { /* to keep the card opacity to 0 before the animation */
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#explanations .card {
+    animation:  $loading-time-first transitionDelay,
+                1s ease-out $loading-time-first 1 slideInLeft forwards;
+    
+    &:nth-of-type(2){
+        animation:  $loading-time-second transitionDelay, 
+                    1s ease-out $loading-time-second 1 slideInLeft forwards;
+    }
+    
+    &:nth-of-type(3){
+        animation:  $loading-time-third transitionDelay, 
+                    1s ease-out $loading-time-third 1 slideInLeft forwards;
+    }
+}
+
+
+#explanations .card:hover {
+    background: lighten($color-primary, 30%);
+    transition: all 0.3s ease-out;
+
+    i{
+        color: $color-primary;
+    }
+}
+
+/* buttons */
+.btn, .cta-btn {
+    opacity: 1;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes buttonDisappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.heart-icon {
+    .fa-regular:hover{
+        animation: buttonDisappear 200ms 0s 1 forwards ease-in;
+    }
+    .fa-solid:hover{
+        animation:buttonAppear 200ms 0s 1 forwards ease-in;
+    }
+}
+
+/* menu cards appearance */
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+    .card {
+        &:nth-of-type(2) {
+            animation: slideInBottom 1s 0s ease-out;
+        }
+        &:nth-of-type(3) {
+            animation: transitionDelay $delay-time 0s 1, 
+            slideInBottom 1s $delay-time* 1 ease-out;
+        }
+        &:nth-of-type(4) {
+            animation: transitionDelay $delay-time*2 0s 1, 
+            slideInBottom 1s $delay-time*2 1 ease-out;
+        }
+        &:nth-of-type(5) {
+            animation: transitionDelay $delay-time*3 0s 1, 
+            slideInBottom 1s $delay-time*3 1 ease-out;
+        }
+    }
+}
+
+/* animation for the validation button */
+
+$validation-btn-timing: 300ms;
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-40px);
+    }
+}
+@keyframes appearance {
+    from {
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateX(20px) rotate(-270deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+    }
+}
+
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+    .card {
+        &:hover {
+            .validation-btn {
+                animation:  appearance $validation-btn-timing ease-out forwards;
+
+                i{
+                    animation: rotation $validation-btn-timing ease-out forwards;
+                }        
+            }
+            .dish-price{
+                animation: slideInRight $validation-btn-timing ease-out forwards;
+            }
+        }
+    }
+}
