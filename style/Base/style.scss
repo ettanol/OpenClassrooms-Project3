@@ -31,15 +31,15 @@ html {
 
 /* custom scrollbar */
 
-html::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     width: 5px; 
 }
 
-html::-webkit-scrollbar-track {
+.container::-webkit-scrollbar-track {
     background-color: $color-lightgray;
 }
 
-html::-webkit-scrollbar-thumb {
+.container::-webkit-scrollbar-thumb {
     background: $color-primary;
     border-radius: 25px;
 }
@@ -174,15 +174,14 @@ aside {
         
         i {
             font-weight: 600;
-            font-size: 18px;
+            font-size: 1.4rem;
             color: #777;
-            margin-top: 3px;
             margin-left: 10px;
         }
         
         p {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1.3rem;
             margin-left: 25px;
         }
         
@@ -223,9 +222,6 @@ aside {
         height: 400px;
         width: 100%;
         position: relative;
-    }
-    
-    .card:not(:last-child) {
         margin-bottom: 20px;
     }
 

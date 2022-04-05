@@ -175,7 +175,7 @@ $validation-btn-timing: 300ms;
         transform: translateX(0);
     }
     to {
-        transform: translateX(-40px);
+        transform: translateX(-75%);
     }
 }
 @keyframes appearance {
@@ -189,13 +189,21 @@ $validation-btn-timing: 300ms;
 
 @keyframes rotation {
     0% {
-        transform: translateX(20px) rotate(-270deg);
+        transform: translateX(50%) rotate(-270deg);
     }
     100% {
         transform: translateX(0) rotate(0);
     }
 }
 
+@keyframes shrink {
+    from{
+        width: 85%;
+    }
+    to {
+        width: 70%;
+    }
+}
 
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {
@@ -209,6 +217,9 @@ $validation-btn-timing: 300ms;
             }
             .dish-price{
                 animation: slideInRight $validation-btn-timing ease-out forwards;
+            }
+            .dish-details {
+                animation: shrink 200ms 1 ease-out forwards;
             }
         }
     }
