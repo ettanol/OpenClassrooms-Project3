@@ -39,6 +39,8 @@ body {
     overflow-x: hidden;
 }
 
+/* general styling */
+
 .container, .menu-container {
     left: 0;
     width: 100%;
@@ -76,7 +78,7 @@ body {
     }
 }
 
-.fa-solid.fa-heart {
+.heart-icon > .fa-solid {
     background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

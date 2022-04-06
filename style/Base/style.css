@@ -599,6 +599,7 @@ h4 {
 }
 
 .menu .card .validation-btn {
+  visibility: hidden;
   position: absolute;
   right: 0;
   height: 65px;
@@ -941,6 +942,10 @@ h4 {
   }
 }
 
+.menu--course-starter .card:hover, .menu--course-main_course .card:hover, .menu--course-dessert .card:hover {
+  border: 1px solid red;
+}
+
 .menu--course-starter .card:hover .validation-btn, .menu--course-main_course .card:hover .validation-btn, .menu--course-dessert .card:hover .validation-btn {
   -webkit-animation: appearance 300ms ease-out forwards;
           animation: appearance 300ms ease-out forwards;
@@ -1193,6 +1198,9 @@ h4 {
     font-size: 18px;
     font-weight: 500;
   }
+  footer .footer--navbar ul li:hover {
+    border-bottom: 2px solid #fff;
+  }
   /****** menu pages ******/
   .menu-container {
     max-height: -webkit-fit-content;
@@ -1231,7 +1239,6 @@ h4 {
     overflow: hidden;
   }
   .menu-container .restaurant_background_image img.page2 {
-    position: fixed;
     right: 38%;
     top: -75%;
   }
@@ -1266,7 +1273,7 @@ h4 {
     position: fixed;
     right: 5px;
   }
-  .menu-container .title {
+  .menu-container footer .title {
     font-size: 28px;
   }
 }
@@ -1313,6 +1320,7 @@ body {
   overflow-x: hidden;
 }
 
+/* general styling */
 .container, .menu-container {
   left: 0;
   width: 100%;
@@ -1357,7 +1365,7 @@ body {
   background-color: #FF79DA;
 }
 
-.fa-solid.fa-heart {
+.heart-icon > .fa-solid {
   background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;

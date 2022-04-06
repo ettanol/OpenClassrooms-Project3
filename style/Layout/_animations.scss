@@ -208,9 +208,9 @@ $validation-btn-timing: 300ms;
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {
         &:hover {
+            border: 1px solid red;
             .validation-btn {
                 animation:  appearance $validation-btn-timing ease-out forwards;
-
                 i{
                     animation: rotation $validation-btn-timing ease-out forwards;
                 }        
