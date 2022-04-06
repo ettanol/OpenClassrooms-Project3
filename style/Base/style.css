@@ -495,7 +495,6 @@ h4 {
   top: 0;
   left: 0;
   font-size: 30px;
-  color: #9356DC;
   opacity: 0;
 }
 
@@ -600,7 +599,6 @@ h4 {
 }
 
 .menu .card .validation-btn {
-  visibility: hidden;
   position: absolute;
   right: 0;
   height: 65px;
@@ -1359,6 +1357,14 @@ body {
   background-color: #FF79DA;
 }
 
+.fa-solid.fa-heart {
+  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* so that it appears on both restaurants and menus pages */
 /* header */
 header {
   height: -webkit-fit-content;
@@ -1582,12 +1588,7 @@ aside .cta-btn {
 }
 
 #restaurants .heart-icon .fa-solid {
-  display: inline-block;
   opacity: 0;
-  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 #restaurants .heart-icon .fa-regular {

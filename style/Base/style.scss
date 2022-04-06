@@ -76,6 +76,13 @@ body {
     }
 }
 
+.fa-solid.fa-heart {
+    background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+} /* so that it appears on both restaurants and menus pages */
+
 /* header */
 
 header {
@@ -277,12 +284,7 @@ aside {
         }
 
         .fa-solid {
-            display: inline-block;
             opacity: 0;
-            background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
         }
 
         .fa-regular {

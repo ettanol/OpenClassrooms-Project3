@@ -54,7 +54,6 @@
                 top: 0;
                 left: 0;
                 font-size: 30px;
-                color: $color-primary;
                 opacity: 0;
             }
         }
@@ -150,7 +149,6 @@
         }
         
         .validation-btn {
-            visibility: hidden;
             position: absolute;
             right: 0;
             height: 65px;
