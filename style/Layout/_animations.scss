@@ -30,7 +30,7 @@ $loading-time: 2000ms;
     animation: loadingScreen $loading-time 0s 1 forwards;
 }
 
-.loading-spinner {
+.spinner-btn {
     animation: loadingDots $loading-time/2 0s 2 ease-out;
 
     &:nth-of-type(2){
