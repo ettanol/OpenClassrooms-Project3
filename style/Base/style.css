@@ -559,6 +559,7 @@ h4 {
   max-width: 750px;
   margin: 7px;
   padding: 0;
+  z-index: 2;
 }
 
 .menu .card .dish .dish-details {
@@ -607,7 +608,7 @@ h4 {
   background-color: rgba(60, 219, 203, 0.4);
   color: #fff;
   border-radius: 10px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .menu .card .validation-btn i {
@@ -942,13 +943,9 @@ h4 {
   }
 }
 
-.menu--course-starter .card:hover, .menu--course-main_course .card:hover, .menu--course-dessert .card:hover {
-  border: 1px solid red;
-}
-
 .menu--course-starter .card:hover .validation-btn, .menu--course-main_course .card:hover .validation-btn, .menu--course-dessert .card:hover .validation-btn {
-  -webkit-animation: appearance 300ms ease-out forwards;
-          animation: appearance 300ms ease-out forwards;
+  -webkit-animation: appearance 300ms ease-out both;
+          animation: appearance 300ms ease-out both;
 }
 
 .menu--course-starter .card:hover .validation-btn i, .menu--course-main_course .card:hover .validation-btn i, .menu--course-dessert .card:hover .validation-btn i {
@@ -956,12 +953,12 @@ h4 {
           animation: rotation 300ms ease-out forwards;
 }
 
-.menu--course-starter .card:hover .dish-price, .menu--course-main_course .card:hover .dish-price, .menu--course-dessert .card:hover .dish-price {
+.menu--course-starter .card:hover .dish .dish-price, .menu--course-main_course .card:hover .dish .dish-price, .menu--course-dessert .card:hover .dish .dish-price {
   -webkit-animation: slideInRight 300ms ease-out forwards;
           animation: slideInRight 300ms ease-out forwards;
 }
 
-.menu--course-starter .card:hover .dish-details, .menu--course-main_course .card:hover .dish-details, .menu--course-dessert .card:hover .dish-details {
+.menu--course-starter .card:hover .dish .dish-details, .menu--course-main_course .card:hover .dish .dish-details, .menu--course-dessert .card:hover .dish .dish-details {
   -webkit-animation: shrink 200ms 1 ease-out forwards;
           animation: shrink 200ms 1 ease-out forwards;
 }
@@ -1207,18 +1204,13 @@ h4 {
     max-height: -moz-fit-content;
     max-height: fit-content;
     width: 100vw;
+    height: 100vh;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 60% 20%;
-        grid-template-columns: 20% 60% 20%;
+    -ms-grid-columns: 20vw 60vw 20vw;
+        grid-template-columns: 20vw 60vw 20vw;
     -ms-grid-rows: 4fr 1fr;
         grid-template-rows: 4fr 1fr;
-  }
-  .menu-container::-webkit-scrollbar {
-    background-color: #F4F4F4;
-  }
-  .menu-container::-webkit-scrollbar-thumb {
-    background-color: #9356DC;
   }
   .menu-container .restaurant_background_image {
     -ms-grid-column: 1;
@@ -1228,19 +1220,24 @@ h4 {
     -ms-grid-row-span: 2;
     grid-row: 1/3;
     height: 100vh;
+    border: 1px solid red;
+    position: fixed;
   }
   .menu-container .restaurant_background_image img {
-    position: fixed;
-    right: 20%;
+    margin-left: -20%;
     z-index: -1;
-    width: 100%;
+    opacity: 0.7;
+    width: 100vw;
+    min-width: 1000px;
     height: 100vh;
-    height: auto;
     overflow: hidden;
   }
   .menu-container .restaurant_background_image img.page2 {
-    right: 38%;
-    top: -75%;
+    margin-left: -30%;
+    margin-top: -10%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .menu-container .menu {
     margin-top: 50px;
@@ -1259,22 +1256,26 @@ h4 {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     grid-row: 2/4;
-    height: 100%;
+    height: 120px;
+    padding-bottom: 30px;
   }
   .menu-container footer {
     height: 100vh;
+    width: 20%;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
-    width: 21%;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
-    position: fixed;
     right: 5px;
+    position: fixed;
   }
   .menu-container footer .title {
     font-size: 28px;
+  }
+  .menu-container footer li {
+    padding-bottom: 20px;
   }
 }
 
@@ -1300,6 +1301,14 @@ html {
   min-width: 320px;
   max-width: 1440px;
   scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  background-color: #F4F4F4;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #9356DC;
 }
 
 body {

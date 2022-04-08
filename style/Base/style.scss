@@ -26,6 +26,14 @@ html {
     min-width: 320px;
     max-width: 1440px;
     scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar{
+        background-color: $color-lightgray;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+    }
 }
 
 body {
