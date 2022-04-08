@@ -27,11 +27,11 @@ $loading-time: 2000ms;
 }
 
 .loading-page {
-    animation: loadingScreen $loading-time 0s 1 forwards;
+    animation: loadingScreen $loading-time 1 forwards;
 }
 
 .spinner-btn {
-    animation: loadingDots $loading-time/2 0s 2 ease-out;
+    animation: loadingDots $loading-time/2 2 ease-out;
 
     &:nth-of-type(2){
         animation-delay: 200ms;
@@ -126,10 +126,10 @@ $loading-time-third: $loading-time +$delay-time*3;
 
 .heart-icon {
     .fa-regular:hover{
-        animation: buttonDisappear 200ms 0s 1 forwards ease-in;
+        animation: buttonDisappear 200ms 1 forwards ease-in;
     }
     .fa-solid:hover{
-        animation:buttonAppear 200ms 0s 1 forwards ease-in;
+        animation:buttonAppear 200ms 1 forwards ease-in;
     }
 }
 
@@ -149,18 +149,18 @@ $loading-time-third: $loading-time +$delay-time*3;
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {
         &:nth-of-type(2) {
-            animation: slideInBottom 1s 0s ease-out;
+            animation: slideInBottom 1s ease-out;
         }
         &:nth-of-type(3) {
-            animation: transitionDelay $delay-time 0s 1, 
+            animation: transitionDelay $delay-time 1, 
             slideInBottom 1s $delay-time* 1 ease-out;
         }
         &:nth-of-type(4) {
-            animation: transitionDelay $delay-time*2 0s 1, 
+            animation: transitionDelay $delay-time*2 1, 
             slideInBottom 1s $delay-time*2 1 ease-out;
         }
         &:nth-of-type(5) {
-            animation: transitionDelay $delay-time*3 0s 1, 
+            animation: transitionDelay $delay-time*3 1, 
             slideInBottom 1s $delay-time*3 1 ease-out;
         }
     }
@@ -192,7 +192,7 @@ $validation-btn-timing: 300ms;
         transform: translateX(50%) rotate(-270deg);
     }
     100% {
-        transform: translateX(0) rotate(0);
+        transform: translateX(0);
     }
 }
 
