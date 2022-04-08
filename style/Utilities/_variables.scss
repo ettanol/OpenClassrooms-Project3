@@ -48,6 +48,7 @@ $color-lightgray: #F4F4F4;
 .card {
     height: fit-content;
     background-color: $color-white;
+    box-shadow: 0px 14px 20px -12px rgba(176,176,176,.5);
 }
 
 .shadow {
