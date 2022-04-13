@@ -106,6 +106,10 @@
                 &:hover {
                     background: #fff linear-gradient(-10deg, rgba(255,121,218, 0.8) 0%, rgba(147,86,220,0.8) 100%);
                 }
+
+                i{
+                    color: $color-white;
+                }
             }
     
         }
@@ -126,11 +130,18 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         height: 100vh;
 
         .cta-btn {
             align-self: center;
         }
+    }
+
+    #CTA::before {
+        display: block;
+        content: "";
+        height: 60px;
     }
 
 
@@ -235,7 +246,7 @@
         }
         .menu {
             margin-top: 50px;
-            padding-top: 50px;
+            padding: 50px 70px 20px 70px;
             grid-column: 2/ 3;
             grid-row: 1 / 2;
             border-bottom: 2px solid #ddd;
@@ -248,7 +259,9 @@
                 }
             }
             .card {
-                margin-bottom: 25px;
+                height: 80px;
+                padding: 5px;
+                border-radius: 20px;
             }
         }
         #CTA {

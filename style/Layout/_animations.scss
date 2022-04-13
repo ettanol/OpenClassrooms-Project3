@@ -45,10 +45,8 @@ $loading-time: 2000ms;
 
 
 /* card appearance effect once the page is loaded */
-$delay-time : 200ms;
-$loading-time-first : $loading-time +$delay-time;
-$loading-time-second: $loading-time +$delay-time*2;
-$loading-time-third: $loading-time +$delay-time*3;
+
+$delay-time: 200ms;
 
 @keyframes slideInLeft {
     0% {
@@ -70,19 +68,17 @@ $loading-time-third: $loading-time +$delay-time*3;
     }
 }
 
+@mixin loadingTime {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation: #{$i * $delay-time + $loading-time} transitionDelay,
+                    1s ease-out #{$i * $delay-time + $loading-time} 1 slideInLeft forwards;
+        }
+    }
+}
+
 #explanations .card {
-    animation:  $loading-time-first transitionDelay,
-                1s ease-out $loading-time-first 1 slideInLeft forwards;
-    
-    &:nth-of-type(2){
-        animation:  $loading-time-second transitionDelay, 
-                    1s ease-out $loading-time-second 1 slideInLeft forwards;
-    }
-    
-    &:nth-of-type(3){
-        animation:  $loading-time-third transitionDelay, 
-                    1s ease-out $loading-time-third 1 slideInLeft forwards;
-    }
+    @include loadingTime;
 }
 
 
@@ -101,6 +97,7 @@ $loading-time-third: $loading-time +$delay-time*3;
 
     &:hover {
         opacity: .8;
+        box-shadow: 0px 15px 15px -15px #333;
     }
 }
 
@@ -146,23 +143,18 @@ $loading-time-third: $loading-time +$delay-time*3;
     }
 }
 
+@mixin menuCardAppearance {
+    @for $i from 2 through 5 {
+        &:nth-of-type(#{$i}) {
+        animation: transitionDelay #{$i * $delay-time} 1,
+                    slideInBottom 1s #{$i * $delay-time} 1 ease-out;
+    }
+}
+}
+
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {
-        &:nth-of-type(2) {
-            animation: slideInBottom 1s ease-out;
-        }
-        &:nth-of-type(3) {
-            animation: transitionDelay $delay-time 1, 
-            slideInBottom 1s $delay-time* 1 ease-out;
-        }
-        &:nth-of-type(4) {
-            animation: transitionDelay $delay-time*2 1, 
-            slideInBottom 1s $delay-time*2 1 ease-out;
-        }
-        &:nth-of-type(5) {
-            animation: transitionDelay $delay-time*3 1, 
-            slideInBottom 1s $delay-time*3 1 ease-out;
-        }
+    @include menuCardAppearance;
     }
 }
 
