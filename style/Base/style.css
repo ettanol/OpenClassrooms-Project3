@@ -1310,11 +1310,6 @@ h4 {
   }
 }
 
-.loading-page {
-  -webkit-animation: loadingScreen 2000ms 1 forwards;
-          animation: loadingScreen 2000ms 1 forwards;
-}
-
 @-webkit-keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -1482,6 +1477,11 @@ h4 {
 .spinner-btn:nth-of-type(3) {
   -webkit-animation: loadingDots 1400ms 2 ease-out;
           animation: loadingDots 1400ms 2 ease-out;
+}
+
+.loading-page {
+  -webkit-animation: loadingScreen 2000ms 1 forwards;
+          animation: loadingScreen 2000ms 1 forwards;
 }
 
 #explanations .card:nth-child(1) {

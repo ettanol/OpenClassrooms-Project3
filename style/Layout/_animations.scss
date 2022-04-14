@@ -34,10 +34,6 @@ $gap: 15%;
     }
 }
 
-.loading-page {
-    animation: loadingScreen $loading-page 1 forwards;
-}
-
 @keyframes slideInLeft {
     0% {
         opacity: 0;
@@ -131,6 +127,10 @@ $gap: 15%;
             animation: $animation 1s ease-out #{$totalDelay} 1 both;
         }
     }
+}
+
+.loading-page {
+    animation: loadingScreen $loading-page 1 forwards;
 }
 
 #explanations .card {
