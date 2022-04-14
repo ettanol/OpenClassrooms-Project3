@@ -1,8 +1,17 @@
+// variables
+
 $loading-page: 2000ms;
 $delay: 200ms;
-/********* animations *********/
+$card-length: 3;
 
-/* loading page */
+/* validation button */
+$validation-btn-timing: 300ms;
+$total: 100%;
+$gap: 15%;
+
+// animations 
+
+/* keyframes */
 
 @keyframes loadingScreen {
     0%, 
@@ -29,24 +38,6 @@ $delay: 200ms;
     animation: loadingScreen $loading-page 1 forwards;
 }
 
-@mixin spinner {
-    $card-length: 3;
-    $repetition: 2;
-    @for $i from 1 to $card-length+1 {
-        .spinner-btn {
-            &:nth-of-type(#{$i}){
-                $loading-total: $loading-page/$repetition+(($i)-1)*$delay;
-                animation: loadingDots $loading-total $repetition ease-out;
-            }
-        }
-    }
-}
-@include spinner;
-
-
-/* card appearance effect once the page is loaded */
-
-
 @keyframes slideInLeft {
     0% {
         opacity: 0;
@@ -58,35 +49,23 @@ $delay: 200ms;
     }
 }
 
-@mixin loadingTime {
-    @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-            animation: 1s ease-out #{$i * $delay + $loading-page} 1 slideInLeft both;
-        }
+@keyframes slideInRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-($total - $gap));
     }
 }
 
-#explanations .card {
-    @include loadingTime;
-}
-
-
-#explanations .card:hover {
-    background: lighten($color-primary, 35%);
-    transition: all 0.3s ease-out;
-
-    i{
-        color: $color-primary;
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
     }
-}
-
-/* buttons */
-.btn, .cta-btn {
-    opacity: 1;
-
-    &:hover {
-        opacity: .8;
-        box-shadow: 0px 15px 15px -15px #333;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -110,56 +89,6 @@ $delay: 200ms;
     }
 }
 
-.heart-icon {
-    .fa-regular:hover{
-        animation: disappearance 200ms 1 forwards ease-in;
-    }
-    .fa-solid:hover{
-        animation: appearance 200ms 1 forwards ease-in;
-    }
-}
-
-/* menu cards appearance */
-
-@keyframes slideInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@mixin menuCardAnimation {
-    @for $i from 2 through 5 {
-        &:nth-of-type(#{$i}) {
-        animation: slideInBottom 1s #{$i * $delay} 1 ease-out both;
-    }
-}
-}
-
-.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
-    .card {
-    @include menuCardAnimation;
-    }
-}
-
-/* animation for the validation button */
-
-$validation-btn-timing: 300ms;
-$total: 100%;
-$gap: 15%;
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-($total - $gap));
-    }
-}
 
 @keyframes rotation {
     0% {
@@ -178,6 +107,71 @@ $gap: 15%;
         width: $total - $gap;
     }
 }
+
+// mixins
+
+@mixin spinner {
+    $repetition: 2;
+    @for $i from 1 to $card-length+1 {
+        .spinner-btn {
+            &:nth-of-type(#{$i}){
+                $loading-total: $loading-page/$repetition+(($i)-1)*$delay;
+                animation: loadingDots $loading-total $repetition ease-out;
+            }
+        }
+    }
+}
+@include spinner;
+
+
+@mixin loadingCards($animation, $delay, $loading-page : $value){
+    @for $i from 1 through $card-length+1 {
+        &:nth-child(#{$i}) {
+            $totalDelay: $i * $delay + $loading-page;
+            animation: $animation 1s ease-out #{$totalDelay} 1 both;
+        }
+    }
+}
+
+#explanations .card {
+    @include loadingCards(slideInLeft, $delay, $loading-page : 2000ms )
+}
+
+.menu--course-starter, .menu--course-main_course, .menu--course-dessert {
+    .card {
+    @include loadingCards(slideInBottom, $delay, $loading-page : 0s )
+    }
+}
+
+#explanations .card:hover {
+    background: lighten($color-primary, 35%);
+    transition: all 0.3s ease-out;
+
+    i{
+        color: $color-primary;
+    }
+}
+
+/* buttons */
+.btn, .cta-btn {
+    opacity: 1;
+
+    &:hover {
+        opacity: .8;
+        box-shadow: 0px 15px 15px -15px #333;
+    }
+}
+
+.heart-icon {
+    .fa-regular:hover{
+        animation: disappearance 200ms 1 forwards ease-in;
+    }
+    .fa-solid:hover{
+        animation: appearance 200ms 1 forwards ease-in;
+    }
+}
+
+/* for the validation button */ 
 
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {

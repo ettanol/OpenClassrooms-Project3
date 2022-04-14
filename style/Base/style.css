@@ -1263,8 +1263,8 @@ h4 {
   background-color: #FF79DA;
 }
 
-/********* animations *********/
-/* loading page */
+/* validation button */
+/* keyframes */
 @-webkit-keyframes loadingScreen {
   0%,
   85% {
@@ -1315,22 +1315,6 @@ h4 {
           animation: loadingScreen 2000ms 1 forwards;
 }
 
-.spinner-btn:nth-of-type(1) {
-  -webkit-animation: loadingDots 1000ms 2 ease-out;
-          animation: loadingDots 1000ms 2 ease-out;
-}
-
-.spinner-btn:nth-of-type(2) {
-  -webkit-animation: loadingDots 1200ms 2 ease-out;
-          animation: loadingDots 1200ms 2 ease-out;
-}
-
-.spinner-btn:nth-of-type(3) {
-  -webkit-animation: loadingDots 1400ms 2 ease-out;
-          animation: loadingDots 1400ms 2 ease-out;
-}
-
-/* card appearance effect once the page is loaded */
 @-webkit-keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -1343,6 +1327,7 @@ h4 {
             transform: translateX(0);
   }
 }
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -1356,45 +1341,52 @@ h4 {
   }
 }
 
-#explanations .card:nth-child(1) {
-  -webkit-animation: 1s ease-out 2200ms 1 slideInLeft both;
-          animation: 1s ease-out 2200ms 1 slideInLeft both;
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-85%);
+            transform: translateX(-85%);
+  }
 }
 
-#explanations .card:nth-child(2) {
-  -webkit-animation: 1s ease-out 2400ms 1 slideInLeft both;
-          animation: 1s ease-out 2400ms 1 slideInLeft both;
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-85%);
+            transform: translateX(-85%);
+  }
 }
 
-#explanations .card:nth-child(3) {
-  -webkit-animation: 1s ease-out 2600ms 1 slideInLeft both;
-          animation: 1s ease-out 2600ms 1 slideInLeft both;
+@-webkit-keyframes slideInBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
-#explanations .card:nth-child(4) {
-  -webkit-animation: 1s ease-out 2800ms 1 slideInLeft both;
-          animation: 1s ease-out 2800ms 1 slideInLeft both;
-}
-
-#explanations .card:hover {
-  background: #f2eafb;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-#explanations .card:hover i {
-  color: #9356DC;
-}
-
-/* buttons */
-.btn, .cta-btn {
-  opacity: 1;
-}
-
-.btn:hover, .cta-btn:hover {
-  opacity: .8;
-  -webkit-box-shadow: 0px 15px 15px -15px #333;
-          box-shadow: 0px 15px 15px -15px #333;
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @-webkit-keyframes appearance {
@@ -1434,84 +1426,6 @@ h4 {
   }
   to {
     opacity: 0;
-  }
-}
-
-.heart-icon .fa-regular:hover {
-  -webkit-animation: disappearance 200ms 1 forwards ease-in;
-          animation: disappearance 200ms 1 forwards ease-in;
-}
-
-.heart-icon .fa-solid:hover {
-  -webkit-animation: appearance 200ms 1 forwards ease-in;
-          animation: appearance 200ms 1 forwards ease-in;
-}
-
-/* menu cards appearance */
-@-webkit-keyframes slideInBottom {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes slideInBottom {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.menu--course-starter .card:nth-of-type(2), .menu--course-main_course .card:nth-of-type(2), .menu--course-dessert .card:nth-of-type(2) {
-  -webkit-animation: slideInBottom 1s 400ms 1 ease-out both;
-          animation: slideInBottom 1s 400ms 1 ease-out both;
-}
-
-.menu--course-starter .card:nth-of-type(3), .menu--course-main_course .card:nth-of-type(3), .menu--course-dessert .card:nth-of-type(3) {
-  -webkit-animation: slideInBottom 1s 600ms 1 ease-out both;
-          animation: slideInBottom 1s 600ms 1 ease-out both;
-}
-
-.menu--course-starter .card:nth-of-type(4), .menu--course-main_course .card:nth-of-type(4), .menu--course-dessert .card:nth-of-type(4) {
-  -webkit-animation: slideInBottom 1s 800ms 1 ease-out both;
-          animation: slideInBottom 1s 800ms 1 ease-out both;
-}
-
-.menu--course-starter .card:nth-of-type(5), .menu--course-main_course .card:nth-of-type(5), .menu--course-dessert .card:nth-of-type(5) {
-  -webkit-animation: slideInBottom 1s 1000ms 1 ease-out both;
-          animation: slideInBottom 1s 1000ms 1 ease-out both;
-}
-
-/* animation for the validation button */
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
-  }
-}
-@keyframes slideInRight {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
   }
 }
 
@@ -1555,6 +1469,93 @@ h4 {
   }
 }
 
+.spinner-btn:nth-of-type(1) {
+  -webkit-animation: loadingDots 1000ms 2 ease-out;
+          animation: loadingDots 1000ms 2 ease-out;
+}
+
+.spinner-btn:nth-of-type(2) {
+  -webkit-animation: loadingDots 1200ms 2 ease-out;
+          animation: loadingDots 1200ms 2 ease-out;
+}
+
+.spinner-btn:nth-of-type(3) {
+  -webkit-animation: loadingDots 1400ms 2 ease-out;
+          animation: loadingDots 1400ms 2 ease-out;
+}
+
+#explanations .card:nth-child(1) {
+  -webkit-animation: slideInLeft 1s ease-out 2200ms 1 both;
+          animation: slideInLeft 1s ease-out 2200ms 1 both;
+}
+
+#explanations .card:nth-child(2) {
+  -webkit-animation: slideInLeft 1s ease-out 2400ms 1 both;
+          animation: slideInLeft 1s ease-out 2400ms 1 both;
+}
+
+#explanations .card:nth-child(3) {
+  -webkit-animation: slideInLeft 1s ease-out 2600ms 1 both;
+          animation: slideInLeft 1s ease-out 2600ms 1 both;
+}
+
+#explanations .card:nth-child(4) {
+  -webkit-animation: slideInLeft 1s ease-out 2800ms 1 both;
+          animation: slideInLeft 1s ease-out 2800ms 1 both;
+}
+
+.menu--course-starter .card:nth-child(1), .menu--course-main_course .card:nth-child(1), .menu--course-dessert .card:nth-child(1) {
+  -webkit-animation: slideInBottom 1s ease-out 200ms 1 both;
+          animation: slideInBottom 1s ease-out 200ms 1 both;
+}
+
+.menu--course-starter .card:nth-child(2), .menu--course-main_course .card:nth-child(2), .menu--course-dessert .card:nth-child(2) {
+  -webkit-animation: slideInBottom 1s ease-out 400ms 1 both;
+          animation: slideInBottom 1s ease-out 400ms 1 both;
+}
+
+.menu--course-starter .card:nth-child(3), .menu--course-main_course .card:nth-child(3), .menu--course-dessert .card:nth-child(3) {
+  -webkit-animation: slideInBottom 1s ease-out 600ms 1 both;
+          animation: slideInBottom 1s ease-out 600ms 1 both;
+}
+
+.menu--course-starter .card:nth-child(4), .menu--course-main_course .card:nth-child(4), .menu--course-dessert .card:nth-child(4) {
+  -webkit-animation: slideInBottom 1s ease-out 800ms 1 both;
+          animation: slideInBottom 1s ease-out 800ms 1 both;
+}
+
+#explanations .card:hover {
+  background: #f2eafb;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#explanations .card:hover i {
+  color: #9356DC;
+}
+
+/* buttons */
+.btn, .cta-btn {
+  opacity: 1;
+}
+
+.btn:hover, .cta-btn:hover {
+  opacity: .8;
+  -webkit-box-shadow: 0px 15px 15px -15px #333;
+          box-shadow: 0px 15px 15px -15px #333;
+}
+
+.heart-icon .fa-regular:hover {
+  -webkit-animation: disappearance 200ms 1 forwards ease-in;
+          animation: disappearance 200ms 1 forwards ease-in;
+}
+
+.heart-icon .fa-solid:hover {
+  -webkit-animation: appearance 200ms 1 forwards ease-in;
+          animation: appearance 200ms 1 forwards ease-in;
+}
+
+/* for the validation button */
 .menu--course-starter .card:hover .validation-btn, .menu--course-main_course .card:hover .validation-btn, .menu--course-dessert .card:hover .validation-btn {
   -webkit-animation: appearance 300ms ease-out both;
           animation: appearance 300ms ease-out both;
@@ -1918,6 +1919,7 @@ header {
   background: #fff;
   position: fixed;
   top: 0;
+  right: 5px;
   z-index: 5;
 }
 
