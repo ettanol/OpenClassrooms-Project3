@@ -1,0 +1,18 @@
+
+@mixin blockContainer {
+    display: block;
+    content: "";
+}
+
+@mixin linearGradient{
+background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
+}
+
+@mixin boxShadow {
+    box-shadow: 0px 15px 15px -15px #999;
+}
+
+@mixin blockContainer {
+    display: block;
+    content: "";
+}

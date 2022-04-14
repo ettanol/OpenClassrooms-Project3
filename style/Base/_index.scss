@@ -1,0 +1,76 @@
+@import '../Utilities/variables';
+@import '../Utilities/mixins';
+
+a {
+    color: $text-color;
+}
+
+a:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+html {
+    min-width: 320px;
+    max-width: 1440px;
+    scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar{
+        background-color: $color-lightgray;
+        width: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+    }
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    font-family : 'Roboto', Arial, 'sans-serif';
+    background-color: $bg-color;
+    color: $text-color;
+    overflow-x: hidden;
+}
+
+.container::before {
+    @include blockContainer;
+    height: 90px;
+}
+
+.menu-container::before {
+    @include blockContainer;
+    height: 60px;
+}
+
+.container, .menu-container {
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+        background-color: $color-lightgray;
+        width: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+        border-radius: 10px;
+    }
+}
+
+section {
+    padding: 30px 15px;
+
+    .title {
+        margin-bottom: 20px;
+        text-align: left;
+        font-size: 26px;
+        width: 100%;
+    }
+}

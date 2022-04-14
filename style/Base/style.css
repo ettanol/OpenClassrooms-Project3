@@ -1,6 +1,13 @@
-/* Box sizing rules */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+*,
+*::before,
+*::after, footer nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -90,6 +97,18 @@ select {
   display: grid;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
 /* to organise flexboxes and grids */
 .main-axis-center {
   display: -webkit-box;
@@ -142,8 +161,16 @@ select {
           box-shadow: 5px 5px 10px #AAA;
 }
 
-.rounded {
+.rounded-1 {
+  border-radius: 10px;
+}
+
+.rounded-2 {
   border-radius: 20px;
+}
+
+.circle {
+  border-radius: 50%;
 }
 
 /* objects */
@@ -205,6 +232,10 @@ h4 {
   margin-top: 75px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* colors */
 .bg-primary {
   background-color: #9356DC;
@@ -256,6 +287,237 @@ h4 {
 
 .color-tertiary {
   color: #99E2D0;
+}
+
+.p-0 {
+  padding: 0em;
+}
+
+.px-0 {
+  padding: 0px 0em;
+}
+
+.py-0 {
+  padding: 0em 0px;
+}
+
+.p-1 {
+  padding: 0.25em;
+}
+
+.px-1 {
+  padding: 0px 0.25em;
+}
+
+.py-1 {
+  padding: 0.25em 0px;
+}
+
+.p-2 {
+  padding: 0.5em;
+}
+
+.px-2 {
+  padding: 0px 0.5em;
+}
+
+.py-2 {
+  padding: 0.5em 0px;
+}
+
+.p-3 {
+  padding: 0.75em;
+}
+
+.px-3 {
+  padding: 0px 0.75em;
+}
+
+.py-3 {
+  padding: 0.75em 0px;
+}
+
+.p-4 {
+  padding: 1em;
+}
+
+.px-4 {
+  padding: 0px 1em;
+}
+
+.py-4 {
+  padding: 1em 0px;
+}
+
+.p-5 {
+  padding: 1.25em;
+}
+
+.px-5 {
+  padding: 0px 1.25em;
+}
+
+.py-5 {
+  padding: 1.25em 0px;
+}
+
+.m-0 {
+  margin: 0em;
+}
+
+.mx-0 {
+  margin: 0px 0em;
+}
+
+.my-0 {
+  margin: 0em 0px;
+}
+
+.m-1 {
+  margin: 0.25em;
+}
+
+.mx-1 {
+  margin: 0px 0.25em;
+}
+
+.my-1 {
+  margin: 0.25em 0px;
+}
+
+.m-2 {
+  margin: 0.5em;
+}
+
+.mx-2 {
+  margin: 0px 0.5em;
+}
+
+.my-2 {
+  margin: 0.5em 0px;
+}
+
+.m-3 {
+  margin: 0.75em;
+}
+
+.mx-3 {
+  margin: 0px 0.75em;
+}
+
+.my-3 {
+  margin: 0.75em 0px;
+}
+
+.m-4 {
+  margin: 1em;
+}
+
+.mx-4 {
+  margin: 0px 1em;
+}
+
+.my-4 {
+  margin: 1em 0px;
+}
+
+.m-5 {
+  margin: 1.25em;
+}
+
+.mx-5 {
+  margin: 0px 1.25em;
+}
+
+.my-5 {
+  margin: 1.25em 0px;
+}
+
+a {
+  color: #111;
+}
+
+a:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+html {
+  min-width: 320px;
+  max-width: 1440px;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  background-color: #F4F4F4;
+  width: 4px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #9356DC;
+  border-radius: 10px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', Arial, 'sans-serif';
+  background-color: #F4F4F4;
+  color: #111;
+  overflow-x: hidden;
+}
+
+.container::before {
+  display: block;
+  content: "";
+  height: 90px;
+}
+
+.menu-container::before {
+  display: block;
+  content: "";
+  height: 60px;
+}
+
+.container, .menu-container {
+  left: 0;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-x: hidden;
+}
+
+.container::-webkit-scrollbar, .menu-container::-webkit-scrollbar {
+  background-color: #F4F4F4;
+  width: 4px;
+}
+
+.container::-webkit-scrollbar-thumb, .menu-container::-webkit-scrollbar-thumb {
+  background-color: #9356DC;
+  border-radius: 10px;
+}
+
+section {
+  padding: 30px 15px;
+}
+
+section .title {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 26px;
+  width: 100%;
 }
 
 /* display */
@@ -270,6 +532,18 @@ h4 {
   display: grid;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
 /* to organise flexboxes and grids */
 .main-axis-center {
   display: -webkit-box;
@@ -322,8 +596,16 @@ h4 {
           box-shadow: 5px 5px 10px #AAA;
 }
 
-.rounded {
+.rounded-1 {
+  border-radius: 10px;
+}
+
+.rounded-2 {
   border-radius: 20px;
+}
+
+.circle {
+  border-radius: 50%;
 }
 
 /* objects */
@@ -385,6 +667,10 @@ h4 {
   margin-top: 75px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* colors */
 .bg-primary {
   background-color: #9356DC;
@@ -436,6 +722,288 @@ h4 {
 
 .color-tertiary {
   color: #99E2D0;
+}
+
+.p-0 {
+  padding: 0em;
+}
+
+.px-0 {
+  padding: 0px 0em;
+}
+
+.py-0 {
+  padding: 0em 0px;
+}
+
+.p-1 {
+  padding: 0.25em;
+}
+
+.px-1 {
+  padding: 0px 0.25em;
+}
+
+.py-1 {
+  padding: 0.25em 0px;
+}
+
+.p-2 {
+  padding: 0.5em;
+}
+
+.px-2 {
+  padding: 0px 0.5em;
+}
+
+.py-2 {
+  padding: 0.5em 0px;
+}
+
+.p-3 {
+  padding: 0.75em;
+}
+
+.px-3 {
+  padding: 0px 0.75em;
+}
+
+.py-3 {
+  padding: 0.75em 0px;
+}
+
+.p-4 {
+  padding: 1em;
+}
+
+.px-4 {
+  padding: 0px 1em;
+}
+
+.py-4 {
+  padding: 1em 0px;
+}
+
+.p-5 {
+  padding: 1.25em;
+}
+
+.px-5 {
+  padding: 0px 1.25em;
+}
+
+.py-5 {
+  padding: 1.25em 0px;
+}
+
+.m-0 {
+  margin: 0em;
+}
+
+.mx-0 {
+  margin: 0px 0em;
+}
+
+.my-0 {
+  margin: 0em 0px;
+}
+
+.m-1 {
+  margin: 0.25em;
+}
+
+.mx-1 {
+  margin: 0px 0.25em;
+}
+
+.my-1 {
+  margin: 0.25em 0px;
+}
+
+.m-2 {
+  margin: 0.5em;
+}
+
+.mx-2 {
+  margin: 0px 0.5em;
+}
+
+.my-2 {
+  margin: 0.5em 0px;
+}
+
+.m-3 {
+  margin: 0.75em;
+}
+
+.mx-3 {
+  margin: 0px 0.75em;
+}
+
+.my-3 {
+  margin: 0.75em 0px;
+}
+
+.m-4 {
+  margin: 1em;
+}
+
+.mx-4 {
+  margin: 0px 1em;
+}
+
+.my-4 {
+  margin: 1em 0px;
+}
+
+.m-5 {
+  margin: 1.25em;
+}
+
+.mx-5 {
+  margin: 0px 1.25em;
+}
+
+.my-5 {
+  margin: 1.25em 0px;
+}
+
+#explanations {
+  background-color: #fff;
+  padding-top: 40px;
+}
+
+#explanations .card {
+  margin-bottom: 25px;
+  position: relative;
+  width: 100%;
+  padding: 25px 30px;
+  background-color: #F4F4F4;
+}
+
+#explanations .card i {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #777;
+  margin-left: 10px;
+}
+
+#explanations .card p {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-left: 25px;
+}
+
+#explanations .card .steps {
+  left: -8px;
+  top: 32%;
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  background-color: #9356DC;
+  color: #fff;
+}
+
+#restaurants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 100px;
+  /* otherwise it disappears under the header */
+  scroll-snap-align: center;
+}
+
+#restaurants a:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0px 15px 15px -15px #999;
+          box-shadow: 0px 15px 15px -15px #999;
+}
+
+#restaurants .card {
+  height: 350px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#restaurants .card .details {
+  height: 20%;
+  width: 100%;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  left: 0;
+}
+
+#restaurants .card .details .restaurant-name {
+  font-size: 20px;
+}
+
+#restaurants .card .details .restaurant-location {
+  text-align: left;
+  font-size: 18px;
+}
+
+#restaurants .card .details .heart-icon {
+  bottom: 30%;
+  right: 6%;
+  height: 30px;
+  width: 30px;
+}
+
+#restaurants .card .details .heart-icon .fa-solid, #restaurants .card .details .heart-icon .fa-regular {
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}
+
+#restaurants .card .details .heart-icon .fa-solid {
+  opacity: 0;
+}
+
+#restaurants .card .details .heart-icon .fa-regular {
+  opacity: 1;
+}
+
+#restaurants img {
+  border-radius: 20px 20px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  height: 80%;
+  -o-object-position: 0% 60%;
+     object-position: 0% 60%;
+}
+
+#restaurants .new {
+  right: 20px;
+  top: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  background-color: #99E2D0;
+  color: #2c9c81;
+  font-size: 16px;
+  font-weight: 600;
+  height: auto;
+  border: none;
+  border-radius: 3px;
 }
 
 .container, .menu-container {
@@ -632,15 +1200,76 @@ h4 {
   font-size: 20px;
 }
 
+.heart-icon > .fa-solid {
+  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
+  /* to make it fill the entire button */
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.cta-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
+  border-radius: 25px;
+  border: none;
+  -webkit-box-shadow: 0px 15px 15px -15px #999;
+          box-shadow: 0px 15px 15px -15px #999;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 500;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container #CTA {
+  padding: 50px 30px 40px 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container #CTA h1 {
+  font-size: 28px;
+  margin: 20px 20px 0px 20px;
+}
+
+.container #CTA p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #666;
+}
+
+.loading-page {
+  background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.spinner-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #9356DC;
+  margin-right: 10px;
+}
+
+.spinner-btn:nth-of-type(2) {
+  background-color: #FF79DA;
+}
+
 /********* animations *********/
 /* loading page */
 @-webkit-keyframes loadingScreen {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
+  0%,
   85% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
@@ -648,12 +1277,10 @@ h4 {
   }
 }
 @keyframes loadingScreen {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
+  0%,
   85% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
@@ -688,19 +1315,19 @@ h4 {
           animation: loadingScreen 2000ms 1 forwards;
 }
 
-.spinner-btn {
+.spinner-btn:nth-of-type(1) {
   -webkit-animation: loadingDots 1000ms 2 ease-out;
           animation: loadingDots 1000ms 2 ease-out;
 }
 
 .spinner-btn:nth-of-type(2) {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
+  -webkit-animation: loadingDots 1200ms 2 ease-out;
+          animation: loadingDots 1200ms 2 ease-out;
 }
 
 .spinner-btn:nth-of-type(3) {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  -webkit-animation: loadingDots 1400ms 2 ease-out;
+          animation: loadingDots 1400ms 2 ease-out;
 }
 
 /* card appearance effect once the page is loaded */
@@ -729,44 +1356,24 @@ h4 {
   }
 }
 
-@-webkit-keyframes transitionDelay {
-  /* to keep the card opacity to 0 before the animation */
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes transitionDelay {
-  /* to keep the card opacity to 0 before the animation */
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 #explanations .card:nth-child(1) {
-  -webkit-animation: 2200ms transitionDelay, 1s ease-out 2200ms 1 slideInLeft forwards;
-          animation: 2200ms transitionDelay, 1s ease-out 2200ms 1 slideInLeft forwards;
+  -webkit-animation: 1s ease-out 2200ms 1 slideInLeft both;
+          animation: 1s ease-out 2200ms 1 slideInLeft both;
 }
 
 #explanations .card:nth-child(2) {
-  -webkit-animation: 2400ms transitionDelay, 1s ease-out 2400ms 1 slideInLeft forwards;
-          animation: 2400ms transitionDelay, 1s ease-out 2400ms 1 slideInLeft forwards;
+  -webkit-animation: 1s ease-out 2400ms 1 slideInLeft both;
+          animation: 1s ease-out 2400ms 1 slideInLeft both;
 }
 
 #explanations .card:nth-child(3) {
-  -webkit-animation: 2600ms transitionDelay, 1s ease-out 2600ms 1 slideInLeft forwards;
-          animation: 2600ms transitionDelay, 1s ease-out 2600ms 1 slideInLeft forwards;
+  -webkit-animation: 1s ease-out 2600ms 1 slideInLeft both;
+          animation: 1s ease-out 2600ms 1 slideInLeft both;
 }
 
 #explanations .card:nth-child(4) {
-  -webkit-animation: 2800ms transitionDelay, 1s ease-out 2800ms 1 slideInLeft forwards;
-          animation: 2800ms transitionDelay, 1s ease-out 2800ms 1 slideInLeft forwards;
+  -webkit-animation: 1s ease-out 2800ms 1 slideInLeft both;
+          animation: 1s ease-out 2800ms 1 slideInLeft both;
 }
 
 #explanations .card:hover {
@@ -790,7 +1397,7 @@ h4 {
           box-shadow: 0px 15px 15px -15px #333;
 }
 
-@-webkit-keyframes buttonAppear {
+@-webkit-keyframes appearance {
   from {
     opacity: 0;
     visibility: hidden;
@@ -801,7 +1408,7 @@ h4 {
   }
 }
 
-@keyframes buttonAppear {
+@keyframes appearance {
   from {
     opacity: 0;
     visibility: hidden;
@@ -812,7 +1419,7 @@ h4 {
   }
 }
 
-@-webkit-keyframes buttonDisappear {
+@-webkit-keyframes disappearance {
   from {
     opacity: 1;
   }
@@ -821,7 +1428,7 @@ h4 {
   }
 }
 
-@keyframes buttonDisappear {
+@keyframes disappearance {
   from {
     opacity: 1;
   }
@@ -831,13 +1438,13 @@ h4 {
 }
 
 .heart-icon .fa-regular:hover {
-  -webkit-animation: buttonDisappear 200ms 1 forwards ease-in;
-          animation: buttonDisappear 200ms 1 forwards ease-in;
+  -webkit-animation: disappearance 200ms 1 forwards ease-in;
+          animation: disappearance 200ms 1 forwards ease-in;
 }
 
 .heart-icon .fa-solid:hover {
-  -webkit-animation: buttonAppear 200ms 1 forwards ease-in;
-          animation: buttonAppear 200ms 1 forwards ease-in;
+  -webkit-animation: appearance 200ms 1 forwards ease-in;
+          animation: appearance 200ms 1 forwards ease-in;
 }
 
 /* menu cards appearance */
@@ -867,23 +1474,23 @@ h4 {
 }
 
 .menu--course-starter .card:nth-of-type(2), .menu--course-main_course .card:nth-of-type(2), .menu--course-dessert .card:nth-of-type(2) {
-  -webkit-animation: transitionDelay 400ms 1, slideInBottom 1s 400ms 1 ease-out;
-          animation: transitionDelay 400ms 1, slideInBottom 1s 400ms 1 ease-out;
+  -webkit-animation: slideInBottom 1s 400ms 1 ease-out both;
+          animation: slideInBottom 1s 400ms 1 ease-out both;
 }
 
 .menu--course-starter .card:nth-of-type(3), .menu--course-main_course .card:nth-of-type(3), .menu--course-dessert .card:nth-of-type(3) {
-  -webkit-animation: transitionDelay 600ms 1, slideInBottom 1s 600ms 1 ease-out;
-          animation: transitionDelay 600ms 1, slideInBottom 1s 600ms 1 ease-out;
+  -webkit-animation: slideInBottom 1s 600ms 1 ease-out both;
+          animation: slideInBottom 1s 600ms 1 ease-out both;
 }
 
 .menu--course-starter .card:nth-of-type(4), .menu--course-main_course .card:nth-of-type(4), .menu--course-dessert .card:nth-of-type(4) {
-  -webkit-animation: transitionDelay 800ms 1, slideInBottom 1s 800ms 1 ease-out;
-          animation: transitionDelay 800ms 1, slideInBottom 1s 800ms 1 ease-out;
+  -webkit-animation: slideInBottom 1s 800ms 1 ease-out both;
+          animation: slideInBottom 1s 800ms 1 ease-out both;
 }
 
 .menu--course-starter .card:nth-of-type(5), .menu--course-main_course .card:nth-of-type(5), .menu--course-dessert .card:nth-of-type(5) {
-  -webkit-animation: transitionDelay 1000ms 1, slideInBottom 1s 1000ms 1 ease-out;
-          animation: transitionDelay 1000ms 1, slideInBottom 1s 1000ms 1 ease-out;
+  -webkit-animation: slideInBottom 1s 1000ms 1 ease-out both;
+          animation: slideInBottom 1s 1000ms 1 ease-out both;
 }
 
 /* animation for the validation button */
@@ -893,8 +1500,8 @@ h4 {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(-75%);
-            transform: translateX(-75%);
+    -webkit-transform: translateX(-85%);
+            transform: translateX(-85%);
   }
 }
 @keyframes slideInRight {
@@ -903,26 +1510,8 @@ h4 {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(-75%);
-            transform: translateX(-75%);
-  }
-}
-
-@-webkit-keyframes appearance {
-  from {
-    visibility: hidden;
-  }
-  to {
-    visibility: visible;
-  }
-}
-
-@keyframes appearance {
-  from {
-    visibility: hidden;
-  }
-  to {
-    visibility: visible;
+    -webkit-transform: translateX(-85%);
+            transform: translateX(-85%);
   }
 }
 
@@ -950,19 +1539,19 @@ h4 {
 
 @-webkit-keyframes shrink {
   from {
-    width: 85%;
+    width: 100%;
   }
   to {
-    width: 70%;
+    width: 85%;
   }
 }
 
 @keyframes shrink {
   from {
-    width: 85%;
+    width: 100%;
   }
   to {
-    width: 70%;
+    width: 85%;
   }
 }
 
@@ -991,8 +1580,6 @@ h4 {
   body {
     background-color: #fff;
     height: 100vh;
-    margin: 0;
-    overflow: hidden;
   }
   .container {
     overflow-y: scroll;
@@ -1003,7 +1590,7 @@ h4 {
   .page {
     width: 100%;
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
   }
   .page:first-child {
     height: 100vh;
@@ -1109,7 +1696,7 @@ h4 {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  #CTA {
+  .container #CTA {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
@@ -1130,7 +1717,7 @@ h4 {
             align-items: center;
     height: 100vh;
   }
-  #CTA .cta-btn {
+  .container #CTA .cta-btn {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1221,7 +1808,7 @@ h4 {
     width: 100%;
   }
   footer .footer--navbar ul {
-    line-height: 4rem;
+    line-height: 2rem;
   }
   footer .footer--navbar ul li {
     text-align: left;
@@ -1290,7 +1877,7 @@ h4 {
   }
   .menu-container .menu .card {
     height: 80px;
-    padding: 5px;
+    padding: 0 5px;
     border-radius: 20px;
   }
   .menu-container #CTA {
@@ -1319,134 +1906,10 @@ h4 {
     font-size: 28px;
   }
   .menu-container footer li {
-    padding-bottom: 20px;
+    padding: 10px 0;
   }
 }
 
-* {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #111;
-}
-
-a:hover {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-html {
-  min-width: 320px;
-  max-width: 1440px;
-  scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar {
-  background-color: #F4F4F4;
-  width: 4px;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: #9356DC;
-  border-radius: 10px;
-}
-
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100vw;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Roboto', Arial, 'sans-serif';
-  background-color: #F4F4F4;
-  color: #111;
-  overflow-x: hidden;
-}
-
-.container::before {
-  display: block;
-  content: "";
-  height: 90px;
-}
-
-.menu-container::before {
-  display: block;
-  content: "";
-  height: 60px;
-}
-
-/* general styling */
-.container, .menu-container {
-  left: 0;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  overflow-x: hidden;
-}
-
-.container::-webkit-scrollbar, .menu-container::-webkit-scrollbar {
-  background-color: #F4F4F4;
-  width: 4px;
-}
-
-.container::-webkit-scrollbar-thumb, .menu-container::-webkit-scrollbar-thumb {
-  background-color: #9356DC;
-  border-radius: 10px;
-}
-
-.loading-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: radial-gradient(#f4F4F4 0%, #C4C4C4 100%);
-  height: 100vh;
-  width: 100vw;
-  z-index: 10;
-}
-
-.spinner-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #9356DC;
-  margin-right: 10px;
-}
-
-.spinner-btn:nth-of-type(2) {
-  background-color: #FF79DA;
-}
-
-.heart-icon > .fa-solid {
-  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
-  /* to make it fill the entire button */
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* header */
 header {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1460,7 +1923,6 @@ header {
 
 #location {
   width: 100%;
-  padding: 10px;
   bottom: 0;
   font-weight: 500;
   color: #111;
@@ -1489,201 +1951,6 @@ header {
           box-shadow: 3px 3px 5px rgba(200, 200, 200, 0.4);
 }
 
-/******** all sections *********/
-section {
-  padding: 30px 15px;
-}
-
-section .title {
-  margin-bottom: 20px;
-  text-align: left;
-  font-size: 26px;
-  width: 100%;
-}
-
-/* main page */
-.cta-btn {
-  margin: 20px;
-  padding: 10px 20px;
-  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
-  border-radius: 25px;
-  border: none;
-  -webkit-box-shadow: 0px 15px 15px -15px #999;
-          box-shadow: 0px 15px 15px -15px #999;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-weight: 500;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.container #CTA {
-  padding: 50px 30px 40px 30px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.container #CTA h1 {
-  font-size: 28px;
-  margin: 20px 20px 0px 20px;
-}
-
-.container #CTA p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #666;
-}
-
-/********** sections **********/
-#explanations {
-  background-color: #fff;
-  padding-top: 40px;
-}
-
-#explanations .card {
-  margin-bottom: 25px;
-  position: relative;
-  width: 100%;
-  padding: 25px 30px;
-  border-radius: 20px;
-  background-color: #F4F4F4;
-}
-
-#explanations .card i {
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: #777;
-  margin-left: 10px;
-}
-
-#explanations .card p {
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-left: 25px;
-}
-
-#explanations .card .steps {
-  position: absolute;
-  left: -8px;
-  top: 32%;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  background-color: #9356DC;
-  color: #fff;
-}
-
-#restaurants {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding-top: 100px;
-  /* otherwise it disappears under the header */
-  scroll-snap-align: center;
-}
-
-#restaurants a:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-  -webkit-box-shadow: 0px 15px 15px -15px #999;
-          box-shadow: 0px 15px 15px -15px #999;
-}
-
-#restaurants .card {
-  height: 350px;
-  width: 100%;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-#restaurants .card .details {
-  position: absolute;
-  height: 20%;
-  width: 100%;
-  padding-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  bottom: 0;
-  left: 0;
-}
-
-#restaurants .restaurant-name {
-  font-size: 20px;
-}
-
-#restaurants .restaurant-location {
-  text-align: left;
-  font-size: 18px;
-}
-
-#restaurants img {
-  border-radius: 20px 20px 0 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 100%;
-  height: 80%;
-  -o-object-position: 0% 60%;
-     object-position: 0% 60%;
-}
-
-#restaurants .new {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 5px 10px;
-  background-color: #99E2D0;
-  color: #2c9c81;
-  font-size: 16px;
-  font-weight: 600;
-  height: auto;
-  border: none;
-  border-radius: 3px;
-}
-
-#restaurants .heart-icon {
-  position: absolute;
-  bottom: 30%;
-  right: 6%;
-  height: 30px;
-  width: 30px;
-}
-
-#restaurants .heart-icon .fa-solid, #restaurants .heart-icon .fa-regular {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 30px;
-}
-
-#restaurants .heart-icon .fa-solid {
-  opacity: 0;
-}
-
-#restaurants .heart-icon .fa-regular {
-  opacity: 1;
-}
-
-/* footer */
 footer {
   padding: 30px 20px;
   background-color: #333;
@@ -1700,11 +1967,6 @@ footer nav {
   height: 100%;
   left: 0;
   margin: 10px 0 30px 0;
-}
-
-footer nav ul {
-  margin: 0;
-  padding: 0;
 }
 
 footer nav li {

@@ -5,20 +5,18 @@
     body {
         background-color: $color-white;
         height: 100vh;
-        margin: 0;
-        overflow: hidden;
     }
     
     .container {
         overflow-y: scroll;
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
-        }
+    }
 
     .page {
         width: 100%;
         height: 100vh;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
     }
 
     .page:first-child {
@@ -124,7 +122,7 @@
         }
     }
     
-    #CTA {
+    .container #CTA {
         grid-area: aside;
         background-color: $bg-color;
         display: flex;
@@ -139,8 +137,7 @@
     }
 
     #CTA::before {
-        display: block;
-        content: "";
+        @include blockContainer;
         height: 60px;
     }
 
@@ -198,7 +195,7 @@
             width: 100%;
             
             ul {
-                line-height: 4rem;
+                line-height: 2rem;
                 
                 li{
                     text-align: left;
@@ -260,7 +257,7 @@
             }
             .card {
                 height: 80px;
-                padding: 5px;
+                padding: 0 5px;
                 border-radius: 20px;
             }
         }
@@ -283,7 +280,7 @@
             }
 
             li{
-                padding-bottom: 20px;
+                padding: 10px 0;
             }
         }
     }

@@ -1,15 +1,14 @@
+$loading-page: 2000ms;
+$delay: 200ms;
 /********* animations *********/
 
 /* loading page */
-$loading-time: 2000ms;
 
 @keyframes loadingScreen {
-    0%{
-        opacity: 1;
-        visibility: visible;
-    }
+    0%, 
     85%{
         opacity: 1;
+        visibility: visible;
     }
     100%{
         opacity: 0;
@@ -27,26 +26,26 @@ $loading-time: 2000ms;
 }
 
 .loading-page {
-    animation: loadingScreen $loading-time 1 forwards;
+    animation: loadingScreen $loading-page 1 forwards;
 }
 
-.spinner-btn {
-    animation: loadingDots $loading-time/2 2 ease-out;
-
-    &:nth-of-type(2){
-        animation-delay: 200ms;
-    }
-    
-    &:nth-of-type(3){
-        animation-delay: 400ms;
+@mixin spinner {
+    $card-length: 3;
+    $repetition: 2;
+    @for $i from 1 to $card-length+1 {
+        .spinner-btn {
+            &:nth-of-type(#{$i}){
+                $loading-total: $loading-page/$repetition+(($i)-1)*$delay;
+                animation: loadingDots $loading-total $repetition ease-out;
+            }
+        }
     }
 }
-
+@include spinner;
 
 
 /* card appearance effect once the page is loaded */
 
-$delay-time: 200ms;
 
 @keyframes slideInLeft {
     0% {
@@ -59,20 +58,10 @@ $delay-time: 200ms;
     }
 }
 
-@keyframes transitionDelay { /* to keep the card opacity to 0 before the animation */
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
 @mixin loadingTime {
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-            animation: #{$i * $delay-time + $loading-time} transitionDelay,
-                    1s ease-out #{$i * $delay-time + $loading-time} 1 slideInLeft forwards;
+            animation: 1s ease-out #{$i * $delay + $loading-page} 1 slideInLeft both;
         }
     }
 }
@@ -101,7 +90,7 @@ $delay-time: 200ms;
     }
 }
 
-@keyframes buttonAppear {
+@keyframes appearance {
     from {
         opacity: 0;
         visibility: hidden;
@@ -112,7 +101,7 @@ $delay-time: 200ms;
     }
 }
 
-@keyframes buttonDisappear {
+@keyframes disappearance {
     from {
         opacity: 1;
     }
@@ -123,10 +112,10 @@ $delay-time: 200ms;
 
 .heart-icon {
     .fa-regular:hover{
-        animation: buttonDisappear 200ms 1 forwards ease-in;
+        animation: disappearance 200ms 1 forwards ease-in;
     }
     .fa-solid:hover{
-        animation:buttonAppear 200ms 1 forwards ease-in;
+        animation: appearance 200ms 1 forwards ease-in;
     }
 }
 
@@ -143,39 +132,32 @@ $delay-time: 200ms;
     }
 }
 
-@mixin menuCardAppearance {
+@mixin menuCardAnimation {
     @for $i from 2 through 5 {
         &:nth-of-type(#{$i}) {
-        animation: transitionDelay #{$i * $delay-time} 1,
-                    slideInBottom 1s #{$i * $delay-time} 1 ease-out;
+        animation: slideInBottom 1s #{$i * $delay} 1 ease-out both;
     }
 }
 }
 
 .menu--course-starter, .menu--course-main_course, .menu--course-dessert {
     .card {
-    @include menuCardAppearance;
+    @include menuCardAnimation;
     }
 }
 
 /* animation for the validation button */
 
 $validation-btn-timing: 300ms;
+$total: 100%;
+$gap: 15%;
 
 @keyframes slideInRight {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-75%);
-    }
-}
-@keyframes appearance {
-    from {
-        visibility: hidden;
-    }
-    to{
-        visibility: visible;
+        transform: translateX(-($total - $gap));
     }
 }
 
@@ -190,10 +172,10 @@ $validation-btn-timing: 300ms;
 
 @keyframes shrink {
     from{
-        width: 85%;
+        width: $total;
     }
     to {
-        width: 70%;
+        width: $total - $gap;
     }
 }
 

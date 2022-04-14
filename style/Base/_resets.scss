@@ -1,8 +1,14 @@
+%resetGutter{
+  margin: 0;
+  padding: 0;
+}
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  @extend %resetGutter
 }
 
 /* Remove default margin */

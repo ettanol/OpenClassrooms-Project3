@@ -19,6 +19,20 @@ $color-lightgray: #F4F4F4;
     display: grid;
 }
 
+// positions
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
 /* to organise flexboxes and grids */
 
 .main-axis-center {
@@ -55,9 +69,18 @@ $color-lightgray: #F4F4F4;
 box-shadow: 5px 5px 10px #AAA;
 }
 
-.rounded {
+.rounded-1 {
+    border-radius: 10px;
+}
+
+.rounded-2 {
     border-radius: 20px;
 }
+
+.circle {
+    border-radius: 50%;
+}
+
 
 /* objects */
 
@@ -114,7 +137,11 @@ h2 {
   
 .banner {
     margin-top: 75px;
-  }
+}
+
+.text-center {
+    text-align: center;
+}
 
 /* colors */
 
@@ -157,6 +184,7 @@ h2 {
 .f-lightgray {
     color: $color-lightgray;
 }
+
 .highlighted {
     color: $color-primary;
 }
@@ -168,3 +196,39 @@ h2 {
 .color-tertiary {
     color: $color-tertiary;
 }
+
+// sizes and gutters 
+
+$gutter : 0.25em;
+
+// padding in em 
+@mixin padding{
+    @for $i from 0 to 6 {
+        .p-#{$i} {
+            padding: $i*$gutter;
+        }
+        .px-#{$i} {
+            padding: 0px ($i*$gutter) ;
+        }
+        .py-#{$i} {
+            padding: ($i*$gutter) 0px;
+        }
+    }
+}
+@include padding;
+
+// margin in em
+@mixin margin {
+    @for $i from 0 to 6 {
+    .m-#{$i} {
+        margin: $i*$gutter;
+    }
+    .mx-#{$i} {
+        margin : 0px ($i*$gutter);
+    }
+    .my-#{$i} {
+        margin : ($i*$gutter) 0px;
+    }
+    }
+}
+@include margin ;
