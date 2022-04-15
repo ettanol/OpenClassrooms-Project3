@@ -1177,9 +1177,9 @@ h4 {
       -ms-flex-align: end;
           align-items: flex-end;
   padding: 0 15px 10px 0;
+  margin-right: 10px;
   width: 15%;
   height: 100%;
-  border-radius: 0 10px 10px 0;
   background-color: #fff;
 }
 
@@ -1188,7 +1188,7 @@ h4 {
   position: absolute;
   right: 0;
   height: 100%;
-  width: 16%;
+  width: 17%;
   background-color: rgba(60, 219, 203, 0.4);
   color: #fff;
   border-radius: 10px;
