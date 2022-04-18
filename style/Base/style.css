@@ -1344,8 +1344,8 @@ h4 {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
   }
 }
 
@@ -1355,8 +1355,8 @@ h4 {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(-85%);
-            transform: translateX(-85%);
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
   }
 }
 
@@ -1453,7 +1453,7 @@ h4 {
     width: 100%;
   }
   to {
-    width: 85%;
+    width: 75%;
   }
 }
 
@@ -1462,7 +1462,7 @@ h4 {
     width: 100%;
   }
   to {
-    width: 85%;
+    width: 75%;
   }
 }
 
