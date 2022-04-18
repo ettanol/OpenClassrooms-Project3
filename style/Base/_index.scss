@@ -14,10 +14,13 @@ html {
     min-width: 320px;
     max-width: 1440px;
     scroll-behavior: smooth;
+    // for firefox users
+    scrollbar-color: $color-primary $color-lightgray;
+    scrollbar-width: thin;
     
     &::-webkit-scrollbar{
         background-color: $color-lightgray;
-        width: 4px;
+        width: $scrollbar-width;
     }
     
     &::-webkit-scrollbar-thumb {
@@ -55,7 +58,7 @@ body {
 
     &::-webkit-scrollbar{
         background-color: $color-lightgray;
-        width: 4px;
+        width: $scrollbar-width;
     }
     
     &::-webkit-scrollbar-thumb {
