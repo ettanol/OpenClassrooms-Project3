@@ -9,7 +9,6 @@
     
     .container {
         overflow-y: scroll;
-        scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
     }
 
@@ -83,7 +82,7 @@
             .card {
                 height: fit-content;
                 width: 100%;
-                background: linear-gradient(-10deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+                @include linearGradient(350deg, $color-primary, $color-secondary, 5%);
                 color: $color-white;
                 justify-content: center;
                 align-items: center;
@@ -102,7 +101,7 @@
                 }
                 
                 &:hover {
-                    background: #fff linear-gradient(-10deg, rgba(255,121,218, 0.8) 0%, rgba(147,86,220,0.8) 100%);
+                    @include linearGradient(350deg, $color-primary, $color-secondary, 10%);
                 }
 
                 i{
@@ -137,8 +136,7 @@
     }
 
     #CTA::before {
-        @include blockContainer;
-        height: 60px;
+        @include homeBlockContainer;
     }
 
 

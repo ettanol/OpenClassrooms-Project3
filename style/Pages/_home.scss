@@ -40,8 +40,8 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    padding-top: 100px; /* otherwise it disappears under the header */
-    scroll-snap-align: center;
+    padding-top: 105px; /* otherwise it disappears under the header */
+    // scroll-snap-align: center;
 
     a {
         &:hover {

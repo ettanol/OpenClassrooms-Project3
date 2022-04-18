@@ -1,18 +1,19 @@
 
-@mixin blockContainer {
+@mixin menuBlockContainer {
     display: block;
     content: "";
+    height: 60px;
 }
 
-@mixin linearGradient{
-background: linear-gradient(356deg, rgba(147,86,220,1) 14%, rgba(255,121,218,1) 100%);
+@mixin homeBlockContainer {
+    display: block;
+    content: "";
+    height: 90px;
 }
 
+@mixin linearGradient($angle, $firstColor, $secondColor, $value){
+background: linear-gradient($angle, lighten($firstColor, $value) 14%, lighten($secondColor, $value) 100%);
+}
 @mixin boxShadow {
     box-shadow: 0px 15px 15px -15px #999;
-}
-
-@mixin blockContainer {
-    display: block;
-    content: "";
 }

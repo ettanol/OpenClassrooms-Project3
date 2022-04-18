@@ -452,16 +452,6 @@ html {
   scrollbar-width: thin;
 }
 
-html::-webkit-scrollbar {
-  background-color: #F4F4F4;
-  width: 4px;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: #9356DC;
-  border-radius: 10px;
-}
-
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -499,6 +489,7 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .container::-webkit-scrollbar, .menu-container::-webkit-scrollbar {
@@ -919,9 +910,8 @@ h4 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-top: 100px;
+  padding-top: 105px;
   /* otherwise it disappears under the header */
-  scroll-snap-align: center;
 }
 
 #restaurants a:hover {
@@ -1203,7 +1193,7 @@ h4 {
 }
 
 .heart-icon > .fa-solid {
-  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
+  background: linear-gradient(356deg, #a16be0 14%, #ff93e1 100%);
   /* to make it fill the entire button */
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -1213,7 +1203,7 @@ h4 {
 .cta-btn {
   margin: 20px;
   padding: 10px 20px;
-  background: linear-gradient(356deg, #9356dc 14%, #ff79da 100%);
+  background: linear-gradient(356deg, #a16be0 14%, #ff93e1 100%);
   border-radius: 25px;
   border: none;
   -webkit-box-shadow: 0px 15px 15px -15px #999;
@@ -1601,7 +1591,6 @@ h4 {
   }
   .container {
     overflow-y: scroll;
-    scroll-behavior: smooth;
     -ms-scroll-snap-type: y mandatory;
         scroll-snap-type: y mandatory;
   }
@@ -1681,7 +1670,7 @@ h4 {
     height: -moz-fit-content;
     height: fit-content;
     width: 100%;
-    background: linear-gradient(-10deg, #ff79da 0%, #9356dc 100%);
+    background: linear-gradient(350deg, #a16be0 14%, #ff93e1 100%);
     color: #fff;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1702,7 +1691,7 @@ h4 {
     top: 25%;
   }
   #explanations .explanation--content .card:hover {
-    background: #fff linear-gradient(-10deg, rgba(255, 121, 218, 0.8) 0%, rgba(147, 86, 220, 0.8) 100%);
+    background: linear-gradient(350deg, #ae80e5 14%, #fface8 100%);
   }
   #explanations .explanation--content .card i {
     color: #fff;
@@ -1743,7 +1732,7 @@ h4 {
   #CTA::before {
     display: block;
     content: "";
-    height: 60px;
+    height: 90px;
   }
   #restaurants {
     max-height: 100vh;

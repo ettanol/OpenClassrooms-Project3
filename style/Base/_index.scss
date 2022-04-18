@@ -17,16 +17,6 @@ html {
     // for firefox users
     scrollbar-color: $color-primary $color-lightgray;
     scrollbar-width: thin;
-    
-    &::-webkit-scrollbar{
-        background-color: $color-lightgray;
-        width: $scrollbar-width;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background-color: $color-primary;
-        border-radius: 10px;
-    }
 }
 
 body {
@@ -41,13 +31,11 @@ body {
 }
 
 .container::before {
-    @include blockContainer;
-    height: 90px;
+    @include homeBlockContainer;
 }
 
 .menu-container::before {
-    @include blockContainer;
-    height: 60px;
+    @include menuBlockContainer;
 }
 
 .container, .menu-container {
@@ -55,6 +43,8 @@ body {
     width: 100%;
     height: fit-content;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+
 
     &::-webkit-scrollbar{
         background-color: $color-lightgray;
